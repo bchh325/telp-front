@@ -7,6 +7,7 @@ interface PlaceProps {
     placeName: string //Name of a particular place
     placeRating: number //Ratings of a particular place
     imageUrl: string //Image source url
+    reviewCount: number
 }
 
 export default function Place(props: PlaceProps) {
@@ -18,9 +19,10 @@ export default function Place(props: PlaceProps) {
             <Text style={[styles.name, styles.textUniversal]} >{props.placeName}</Text>
             <View style={styles.ratingContainer}>
                 <Text style={[styles.rating, styles.textUniversal]} >
-                    {props.placeRating}  
+                    {props.placeRating}
                 </Text>
                 <FontAwesome name='star' color="white" size={15} />
+                <Text style={{color: "white"}}>({props.reviewCount})  </Text>
             </View>
         </View>
     )

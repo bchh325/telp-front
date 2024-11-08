@@ -3959,6 +3959,7 @@ export default function HomeScreen() {
                         placeName={value.name} 
                         placeRating={value.rating}
                         imageUrl={value.image_url}
+                        reviewCount={value.review_count}
                         />
                     )
                 })
