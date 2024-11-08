@@ -1,15 +1,19 @@
 import { Text, View } from "react-native";
+import store from "./state/store";
+
+import { Provider, useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "./slices/counterSlice";
+import { Counter } from "./Counter";
+import HomeScreen from "./screens/HomeScreen";
+import NavigationBar from "@/components/NavigationBar";
+
 
 export default function Index() {
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <Provider store={store}>
+      {false && <HomeScreen />}
+      {true && <NavigationBar />}
+    </Provider>
   );
 }
