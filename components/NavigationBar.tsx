@@ -33,6 +33,9 @@ export default function NavigationBar(props: NavigationBarProps) {
             <Pressable onPress={() => navigateTo("UserAccount")}>
                 <Icon style={[styles.icon, handleStyle("UserAccount")]} name='user' size={20} color={"white"} />
             </Pressable>
+            <Pressable onPress={() => navigateTo("Favorites")}>
+                <Icon style={[styles.icon, handleStyle("Favorites")]} name='staro' size={20} color={"white"} />
+            </Pressable>
         </View>
     )
 }

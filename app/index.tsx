@@ -8,6 +8,7 @@ import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react
 import { useNavigation } from "@react-navigation/native";
 import UserAccountScreen from "./screens/UserAccountScreen";
 import { RootStackParamList } from "./navigation_configs/types";
+import Favorites from "./screens/Favorites";
 
 const StackInstance = createNativeStackNavigator<RootStackParamList>()
 
@@ -26,6 +27,7 @@ export default function Index() {
       >
         <StackInstance.Screen name="Home" component={HomeScreen} />
         <StackInstance.Screen name="UserAccount" component={UserAccountScreen} />
+        <StackInstance.Screen name="Favorites" component={Favorites} />
       </StackInstance.Navigator>
       <NavigationBar navigation={navigationObject} />
     </Provider>
