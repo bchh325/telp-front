@@ -5,11 +5,16 @@ import { Dimensions } from 'react-native'
 import Icon from '@expo/vector-icons/AntDesign'
 import { useState } from 'react'
 import Animated, { interpolate, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import { useNavigationState } from '@react-navigation/native'
+import { current } from '@reduxjs/toolkit'
 
 export default function SearchBar() {
+    const currentNavigationState = useNavigationState(state => state)
     const collapsibleWidth = useSharedValue(0)
-
-    //width: `${widthAnim.value * 100}%`
+    
+    if (currentNavigationState.routes[currentNavigationState.index].name != "Home") {
+        collapsibleWidth.value = 0
+    }
 
     const searchCollapseStyle = useAnimatedStyle(() => {
         const interpolatedWidth = interpolate(
@@ -20,20 +25,17 @@ export default function SearchBar() {
 
         return {
             width: withTiming(`${interpolatedWidth}%`, {
-                duration: 250,
+                duration: 200,
               }),
         }
     })
 
-    const toggleSearch = () => {
-    }
-
     return (
-        <View style={[styles.navContainer, {}]}>
+        <View style={[styles.container, {}]}>
             <Icon onPress={() => { collapsibleWidth.value = collapsibleWidth.value == 0 ? 1 : 0}} style={styles.icon} name='search1' size={20} color={"white"} />
             <View style={styles.searchInputContainer}>
                 <Animated.View style={[styles.collapse, searchCollapseStyle]}>
-                    <TextInput style={styles.searchInput}>Testafdsadsafdsfdsafdsadfdasfdsadsasafdsafdsfdsafdas</TextInput>
+                    <TextInput style={[styles.searchInput]}>Testafdsadsafdsfdsafdsadfdasfdsadsasafdsafdsfdsafdas</TextInput>
                 </Animated.View>
             </View>
         </View>
@@ -41,7 +43,7 @@ export default function SearchBar() {
 }
 
 const styles = StyleSheet.create({
-    navContainer: {
+    container: {
         marginTop: 10,
         display: "flex",
         position: "absolute",
@@ -51,6 +53,7 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         width: "100%",
         paddingRight: 10,
+        zIndex: 1
     },
     icon: {
         padding: 10,
@@ -58,17 +61,20 @@ const styles = StyleSheet.create({
     searchInput: {
         color: "white",
         height: "100%",
-        paddingHorizontal: 20,
         backgroundColor: 'rgba(0,0,0,0.5)',
         borderRadius: 50,
+        borderColor: "blue",
+        borderWidth: 0,
+        paddingHorizontal: 20
     },
     searchInputContainer: {
         flex: 1,
-        overflow: "hidden",
         borderColor: "red",
         borderWidth: 0,
     },
     collapse: {
-        overflow: "hidden"
+        overflow: "hidden",
+        borderColor: "red",
+        borderWidth: 0
     }
 })

@@ -4,15 +4,13 @@ import { StyleSheet } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 interface PlaceProps {
-    placeName: string //Name of a particular place
-    placeRating: number //Ratings of a particular place
-    imageUrl: string //Image source url
+    placeName: string 
+    placeRating: number 
+    imageUrl: string 
     reviewCount: number
 }
 
 export default function Place(props: PlaceProps) {
-    console.debug(props.imageUrl)
-
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: props.imageUrl }} />

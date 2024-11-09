@@ -1,18 +1,38 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Pressable } from 'react-native'
+import React, { useState } from 'react'
 import { StyleSheet } from 'react-native'
 import { Dimensions } from 'react-native'
 import Icon from '@expo/vector-icons/AntDesign'
+import { NavigationProp, NavigationState, StackNavigationState, useNavigationState } from '@react-navigation/native'
+import { current } from '@reduxjs/toolkit'
+import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors'
+
+interface NavigationBarProps {
+    navigation: any
+}
+
+export default function NavigationBar(props: NavigationBarProps) {
+
+    const navigationObject = props.navigation
+    const [currentRoute, setCurrentRoute] = useState("Home")
+
+    const navigateTo = (screenName: string) => {
+        navigationObject.navigate(screenName)
+        setCurrentRoute(screenName)
+    }
+
+    const handleStyle = (screenName: string) => { 
+        return (currentRoute == screenName ? { opacity: 1 } : { opacity: 0.60 }) }
 
 
-export default function NavigationBar() {
     return (
-        <View style={[styles.navContainer, {width: "auto"}]}>
-            <Icon style={styles.icon} name='home' size={20} color={"white"}/>
-            <Icon style={styles.icon} name='user' size={20} color={"white"}/>
-            <Icon style={styles.icon} name='staro' size={20} color={"white"}/>
-            <Icon style={styles.icon} name='staro' size={20} color={"white"}/>
-            <Icon style={styles.icon} name='staro' size={20} color={"white"}/>
+        <View style={[styles.navContainer, { width: "auto" }]}>
+            <Pressable onPress={() => navigateTo("Home")}>
+                <Icon style={[styles.icon, handleStyle("Home")]} name='home' size={20} color={"white"} />
+            </Pressable>
+            <Pressable onPress={() => navigateTo("UserAccount")}>
+                <Icon style={[styles.icon, handleStyle("UserAccount")]} name='user' size={20} color={"white"} />
+            </Pressable>
         </View>
     )
 }

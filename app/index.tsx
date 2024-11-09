@@ -4,29 +4,30 @@ import store from "./state/store";
 import { Provider, useSelector, useDispatch } from "react-redux";
 import HomeScreen from "./screens/HomeScreen";
 import NavigationBar from "@/components/NavigationBar";
-import { StyleSheet } from "react-native";
-import SearchBar from "@/components/SearchBar";
+import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
+import UserAccountScreen from "./screens/UserAccountScreen";
+import { RootStackParamList } from "./navigation_configs/types";
 
+const StackInstance = createNativeStackNavigator<RootStackParamList>()
 
 export default function Index() {
+  const navigationObject = useNavigation()
+
+  const screenOptions: NativeStackNavigationOptions = {
+    headerShown: false
+  }
 
   return (
     <Provider store={store}>
-      <View style={styles.container}>
-        {true && <HomeScreen />}
-        {true && <NavigationBar />}
-        {true && <SearchBar />}
-      </View>
+      <StackInstance.Navigator
+        screenOptions={screenOptions}
+        initialRouteName="Home"
+      >
+        <StackInstance.Screen name="Home" component={HomeScreen} />
+        <StackInstance.Screen name="UserAccount" component={UserAccountScreen} />
+      </StackInstance.Navigator>
+      <NavigationBar navigation={navigationObject} />
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-    container: {
-      position: "relative",
-      height: "100%",
-      width: "100%",
-      borderColor: "red",
-      borderWidth: 0
-    }
-})
