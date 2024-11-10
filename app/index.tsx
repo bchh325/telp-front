@@ -16,7 +16,8 @@ export default function Index() {
   const navigationObject = useNavigation()
 
   const screenOptions: NativeStackNavigationOptions = {
-    headerShown: false
+    headerShown: false,
+    animation: "none"
   }
 
   return (

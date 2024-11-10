@@ -3,12 +3,12 @@ import React from 'react'
 import PagerView from 'react-native-pager-view';
 import { Dimensions } from 'react-native';
 import Place from '@/components/Place';
-import { businesses_0 } from '@/constants/SampleData';
+import { businesses_0, businesses_1 } from '@/constants/SampleData';
 import SearchBar from '@/components/SearchBar';
 
 
 export default function HomeScreen() {
-  const sampleData = businesses_0
+  const sampleData = businesses_1
 
   return (
     <View style={styles.container}>

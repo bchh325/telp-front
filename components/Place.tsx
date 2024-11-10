@@ -15,9 +15,6 @@ export default function Place(props: PlaceProps) {
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: props.imageUrl }} />
             <View style={styles.informationContainer}>
-                <Pressable style={styles.buttonContainer}>
-                    <Icon style={[styles.buttonIcon, { opacity: 0 }]} name='star' color="white" size={30} />
-                </Pressable>
                 <View style={{ width: "70%", borderColor: "red", borderWidth: 0 }}>
                     <Text style={[styles.name, styles.textUniversal]} >{props.placeName}</Text>
                     <View style={styles.ratingContainer}>
@@ -28,9 +25,6 @@ export default function Place(props: PlaceProps) {
                         <Text style={{ color: "white" }}>({props.reviewCount})</Text>
                     </View>
                 </View>
-                <Pressable style={styles.buttonContainer}>
-                    <Icon style={styles.buttonIcon} name='staro' color="white" size={30} />
-                </Pressable>
             </View>
         </View>
     )

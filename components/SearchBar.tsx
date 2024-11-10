@@ -1,5 +1,5 @@
-import { View, Text, TextInput } from 'react-native'
-import React, { useEffect } from 'react'
+import { View, Text, TextInput, Pressable, LayoutRectangle, LayoutChangeEvent, NativeSyntheticEvent } from 'react-native'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { StyleSheet } from 'react-native'
 import { Dimensions } from 'react-native'
 import Icon from '@expo/vector-icons/AntDesign'
@@ -12,79 +12,115 @@ import { Easing } from 'react-native-reanimated'
 export default function SearchBar() {
     const currentNavigationState = useNavigationState(state => state)
     const collapsibleWidth = useSharedValue(0)
-    const deviceWidth: number = Dimensions.get('window').width
+    const opacityValue = useSharedValue(0)
+    const [searchWidth, setSearchWidth] = useState(0)
+    const [searchIconToggle, setSearchIconToggle] = useState(true)
 
     if (currentNavigationState.routes[currentNavigationState.index].name != "Home") {
         collapsibleWidth.value = 0
+    } else {
+
     }
+
+    useEffect(() => {
+        opacityValue.value = 1
+    }, [])
 
     const searchCollapseStyle = useAnimatedStyle(() => {
         const interpolatedWidth = interpolate(
             collapsibleWidth.value,
             [0, 1],
-            [0, 1]
+            [searchWidth, 0]
         );
+
         return {
             transform: [{
-                scaleX: withTiming(interpolatedWidth, {
-                    duration: 300,
+                translateX: withTiming(interpolatedWidth, {
+                    duration: 400,
                     easing: Easing.inOut(Easing.cubic),
                 })
             }]
         }
     })
 
+    const fadeInStyle = useAnimatedStyle(() => {
+        return {
+            opacity: withTiming(opacityValue.value, {
+                duration: 1000,
+                easing: Easing.bezier(1,-0.21,1,.02)
+            })
+        }
+    })
+
+    const handleCollapse = () => {
+        collapsibleWidth.value = collapsibleWidth.value == 0 ? 1 : 0
+        setSearchIconToggle(prev => !prev)
+    }
+
+    const toggleSearchIcon = () => {
+        return searchIconToggle ? "search1" : "close"
+    }
+
+    const getComponentLayout = (nativeEvent: any) => {
+        const { x, y, width, height } = nativeEvent.layout
+        console.debug("setting width, ", width)
+        setSearchWidth(width + 10)
+
+    }
+
     return (
-        <View style={[styles.container, {}]}>
-            <View style={styles.searchInputContainer}>
-                <Animated.View style={[styles.collapse]}>
-                    <Animated.View style={[searchCollapseStyle, {justifyContent: "flex-end"}]}>
-                        <TextInput style={[styles.searchInput]}></TextInput>
-                    </Animated.View>
-                </Animated.View>
+        <Animated.View style={[styles.container, searchCollapseStyle, fadeInStyle]}>
+            <Icon style={styles.icon} onPress={() => handleCollapse()} name={toggleSearchIcon()} size={20} color={"white"} />
+            <View style={styles.searchContainer} onLayout={({ nativeEvent }) => { getComponentLayout(nativeEvent) }}>
+                <TextInput style={styles.textInput}>Test</TextInput>
+                <Pressable style={styles.submit}>
+                    <Text style={{ color: "white" }}>Press</Text>
+                </Pressable>
             </View>
-            <Icon onPress={() => { collapsibleWidth.value = collapsibleWidth.value == 0 ? 1 : 0 }} style={styles.icon} name='search1' size={20} color={"white"} />
-        </View>
+        </Animated.View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 10,
-        display: "flex",
-        position: "absolute",
-        flexDirection: "row",
-        alignItems: "center",
         borderColor: "red",
         borderWidth: 0,
+        position: "absolute",
         width: "100%",
-        paddingLeft: 10,
-        zIndex: 1
+        zIndex: 1,
+        display: "flex",
+        flexDirection: "row",
+        paddingRight: 10,
+        paddingVertical: 5,
+        alignItems: "center"
     },
     icon: {
         padding: 10,
-        zIndex: 2,
-        overflow: "hidden",
-        borderColor: "red",
-        borderWidth: 0
+        borderColor: "green",
+        borderWidth: 0,
     },
-    searchInput: {
-        color: "white",
-        height: "100%",
-        backgroundColor: 'rgba(0,0,0,0.5)',
+    searchContainer: {
+        display: "flex",
+        flexDirection: "row",
+        flex: 1,
+        position: "relative",
+        backgroundColor: "rgba(0,0,0,0.55)",
+        borderRadius: 5,
+        paddingHorizontal: 10,
         borderColor: "blue",
         borderWidth: 0,
-        borderRadius: 15,
-        paddingHorizontal: 20
+        height: "80%",
+        alignItems: "center"
     },
-    searchInputContainer: {
-        flex: 1,
-        borderColor: "red",
+    textInput: {
+        borderColor: "pink",
         borderWidth: 0,
+        color: "white",
+        flex: 1,
     },
-    collapse: {
-        overflow: "hidden",
-        borderColor: "red",
-        borderWidth: 0
+    submit: {
+        borderColor: "yellow",
+        borderWidth: 0,
+        padding: 3
     }
 })
