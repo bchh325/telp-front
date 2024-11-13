@@ -6,11 +6,11 @@ import NavigationBar from "@/app/components/NavigationBar";
 import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import UserAccountScreen from "./screens/MainNavigationStack/UserAccountScreen";
-import { RootStackParamList } from "./navigation_configs/types";
+import { MainStackParamList } from "./navigation_configs/types";
 import Favorites from "./screens/MainNavigationStack/Favorites";
 import HomeScreen from "./screens/MainNavigationStack/HomeScreen";
 
-const MainNavigationStack = createNativeStackNavigator<RootStackParamList>()
+const MainNavigationStack = createNativeStackNavigator<MainStackParamList>()
 
 export default function Index() {
   const navigationObject = useNavigation()

@@ -9,17 +9,18 @@ import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react
 import PlacesScreen from '../HomeScreenNavigationStack/PlacesScreen';
 import InformationScreen from '../HomeScreenNavigationStack/InformationScreen';
 import { createMaterialTopTabNavigator, MaterialTopTabNavigationOptions } from '@react-navigation/material-top-tabs';
+import { HomeStackParamList } from '@/app/navigation_configs/types';
 
 
-const HomeScreenNavigationStack = createMaterialTopTabNavigator()
+const HomeScreenNavigationStack = createMaterialTopTabNavigator<HomeStackParamList>()
 
 export default function HomeScreen() {
-  const sampleData = businesses_1
-
   const screenOptions: MaterialTopTabNavigationOptions = {
     tabBarShowLabel: false,
     tabBarStyle: {height: 0},
   }
+
+  //Take data logic out of Place component, move here
 
   return (
       <HomeScreenNavigationStack.Navigator
