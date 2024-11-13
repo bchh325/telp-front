@@ -37,7 +37,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: 'rgba(0,0,0,1)',
         borderColor: "red",
-        borderWidth: 0
+        borderWidth: 0,
+        position: "relative",
+        height: "100%",
+        width: "100%",
     },
     informationContainer: {
         borderColor: "red",

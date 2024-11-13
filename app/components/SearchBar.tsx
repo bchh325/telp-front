@@ -16,12 +16,6 @@ export default function SearchBar() {
     const [searchWidth, setSearchWidth] = useState(0)
     const [searchIconToggle, setSearchIconToggle] = useState(true)
 
-    if (currentNavigationState.routes[currentNavigationState.index].name != "Home") {
-        collapsibleWidth.value = 0
-    } else {
-
-    }
-
     useEffect(() => {
         opacityValue.value = 1
     }, [])
@@ -32,6 +26,8 @@ export default function SearchBar() {
             [0, 1],
             [searchWidth, 0]
         );
+
+        console.debug(interpolatedWidth)
 
         return {
             transform: [{
@@ -54,6 +50,7 @@ export default function SearchBar() {
 
     const handleCollapse = () => {
         collapsibleWidth.value = collapsibleWidth.value == 0 ? 1 : 0
+        console.debug(collapsibleWidth.value == 0)
         setSearchIconToggle(prev => !prev)
     }
 
@@ -65,7 +62,6 @@ export default function SearchBar() {
         const { x, y, width, height } = nativeEvent.layout
         console.debug("setting width, ", width)
         setSearchWidth(width + 10)
-
     }
 
     return (

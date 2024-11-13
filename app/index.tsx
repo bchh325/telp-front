@@ -2,15 +2,15 @@ import { Text, View } from "react-native";
 import store from "./state/store";
 
 import { Provider, useSelector, useDispatch } from "react-redux";
-import HomeScreen from "./screens/HomeScreen";
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/app/components/NavigationBar";
 import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
-import UserAccountScreen from "./screens/UserAccountScreen";
+import UserAccountScreen from "./screens/MainNavigationStack/UserAccountScreen";
 import { RootStackParamList } from "./navigation_configs/types";
-import Favorites from "./screens/Favorites";
+import Favorites from "./screens/MainNavigationStack/Favorites";
+import HomeScreen from "./screens/MainNavigationStack/HomeScreen";
 
-const StackInstance = createNativeStackNavigator<RootStackParamList>()
+const MainNavigationStack = createNativeStackNavigator<RootStackParamList>()
 
 export default function Index() {
   const navigationObject = useNavigation()
@@ -22,14 +22,14 @@ export default function Index() {
 
   return (
     <Provider store={store}>
-      <StackInstance.Navigator
+      <MainNavigationStack.Navigator
         screenOptions={screenOptions}
         initialRouteName="Home"
       >
-        <StackInstance.Screen name="Home" component={HomeScreen} />
-        <StackInstance.Screen name="UserAccount" component={UserAccountScreen} />
-        <StackInstance.Screen name="Favorites" component={Favorites} />
-      </StackInstance.Navigator>
+        <MainNavigationStack.Screen name="Home" component={HomeScreen} />
+        <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
+        <MainNavigationStack.Screen name="Favorites" component={Favorites} />
+      </MainNavigationStack.Navigator>
       <NavigationBar navigation={navigationObject} />
     </Provider>
   );

@@ -2,22 +2,21 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import PagerView from 'react-native-pager-view';
 import { Dimensions } from 'react-native';
-import Place from '@/components/Place';
+import Place from '@/app/components/Place';
 import { businesses_0, businesses_1 } from '@/constants/SampleData';
-import SearchBar from '@/components/SearchBar';
+import SearchBar from '@/app/components/SearchBar';
 
 
-export default function HomeScreen() {
+export default function PlacesScreen() {
   const sampleData = businesses_1
 
   return (
-    <View style={styles.container}>
+    <>
       <SearchBar />
       <PagerView
         orientation={"vertical"}
         initialPage={0}
         style={{ height: Dimensions.get('window').height }}>
-
         {
           sampleData.businesses.map((value, index: number) => {
             return (
@@ -32,17 +31,8 @@ export default function HomeScreen() {
           })
         }
       </PagerView>
-    </View>
+    </>
   )
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    position: "relative",
-    height: "100%",
-    width: "100%",
-    borderColor: "red",
-    borderWidth: 0
-  }
-})
