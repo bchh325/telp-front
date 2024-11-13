@@ -8,15 +8,17 @@ import SearchBar from '@/app/components/SearchBar';
 import { createNativeStackNavigator, NativeStackNavigationOptions } from '@react-navigation/native-stack';
 import PlacesScreen from '../HomeScreenNavigationStack/PlacesScreen';
 import InformationScreen from '../HomeScreenNavigationStack/InformationScreen';
+import { createMaterialTopTabNavigator, MaterialTopTabNavigationOptions } from '@react-navigation/material-top-tabs';
 
-const HomeScreenNavigationStack = createNativeStackNavigator()
+
+const HomeScreenNavigationStack = createMaterialTopTabNavigator()
 
 export default function HomeScreen() {
   const sampleData = businesses_1
 
-  const screenOptions: NativeStackNavigationOptions = {
-    headerShown: false,
-    animation: "none"
+  const screenOptions: MaterialTopTabNavigationOptions = {
+    tabBarShowLabel: false,
+    tabBarStyle: {height: 0},
   }
 
   return (
