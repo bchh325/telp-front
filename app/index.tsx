@@ -9,10 +9,13 @@ import UserAccountScreen from "./screens/MainNavigationStack/UserAccountScreen";
 import { MainStackParamList } from "./navigation_configs/types";
 import Favorites from "./screens/MainNavigationStack/Favorites";
 import HomeScreen from "./screens/MainNavigationStack/HomeScreen";
+import LoginScreen from "./screens/LoginScreen";
+import { useState } from "react";
 
 const MainNavigationStack = createNativeStackNavigator<MainStackParamList>()
 
 export default function Index() {
+  const [loggedIn, setLoggedIn] = useState(false)
   const navigationObject = useNavigation()
 
   const screenOptions: NativeStackNavigationOptions = {
@@ -22,15 +25,23 @@ export default function Index() {
 
   return (
     <Provider store={store}>
-      <MainNavigationStack.Navigator
-        screenOptions={screenOptions}
-        initialRouteName="Home"
-      >
-        <MainNavigationStack.Screen name="Home" component={HomeScreen} />
-        <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
-        <MainNavigationStack.Screen name="Favorites" component={Favorites} />
-      </MainNavigationStack.Navigator>
-      <NavigationBar navigation={navigationObject} />
+      {!loggedIn &&
+        <LoginScreen />
+      }
+
+      {loggedIn &&
+        <>
+          <MainNavigationStack.Navigator
+            screenOptions={screenOptions}
+            initialRouteName="Home"
+          >
+            <MainNavigationStack.Screen name="Home" component={HomeScreen} />
+            <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
+            <MainNavigationStack.Screen name="Favorites" component={Favorites} />
+          </MainNavigationStack.Navigator>
+          <NavigationBar navigation={navigationObject} />
+        </>
+      }
     </Provider>
   );
 }
