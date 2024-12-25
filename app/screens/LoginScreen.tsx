@@ -11,7 +11,7 @@ export default function LoginScreen() {
     <View>
       <Text>LoginScreen</Text>
       <Button
-        title='Button'
+        title='Sign Up'
         onPress={() => { triggerGetGreeting() }}
       ></Button>
       <Button title='Check' onPress={() => { console.debug(data, isLoading, error) }} />
