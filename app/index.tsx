@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import React from 'react'
 import store from "./state/store";
 
 import { Provider, useSelector, useDispatch } from "react-redux";
