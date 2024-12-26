@@ -1,4 +1,4 @@
-{
+export default {
   "expo": {
     "name": "telp-front",
     "slug": "telp-front",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "googleServicesFile": "./firebase_credentials/google-services.json",
+      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON,
       "package": "com.tofushop.telp"
     },
     "web": {
@@ -45,6 +45,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "1db38a78-a824-477d-9153-340547251973"
+      }
     }
   }
 }
