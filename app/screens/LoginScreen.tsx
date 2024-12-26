@@ -14,7 +14,7 @@ export default function LoginScreen() {
 
   return (
     <View>
-      <Text>LoginScreen</Text>
+      <Text>LoginScreen Test</Text>
       <Button
         title='Sign Up'
         onPress={() => { handlePress() }}
