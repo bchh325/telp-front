@@ -1,13 +1,14 @@
 import { getAuth, signOut } from "@react-native-firebase/auth";
+import { FirebaseAuthTypes } from "@react-native-firebase/auth";
 
 
 const tAuth = {
-    signUp: async (email: string, password: string) => {
+    signUp:  (email: string, password: string): Promise<FirebaseAuthTypes.UserCredential> => {
         try {
             const auth = getAuth()
-            const signUpResponse = await auth?.createUserWithEmailAndPassword(email, password)
+            const signUpResponse = auth?.createUserWithEmailAndPassword(email, password)
             return signUpResponse
-        } catch (err) {
+        } catch (err: any) {
             return err
         }
     },
@@ -27,6 +28,15 @@ const tAuth = {
             const auth = getAuth()
             const signInResponse = await auth?.signInWithEmailAndPassword(email, password)
             console.debug(signInResponse)
+        } catch (err) {
+            console.debug(err)
+        }
+    },
+
+    getCurrentUser: () => {
+        try {
+            const auth = getAuth()
+            return auth?.currentUser
         } catch (err) {
             console.debug(err)
         }

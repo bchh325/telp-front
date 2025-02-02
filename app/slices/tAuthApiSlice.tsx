@@ -1,4 +1,5 @@
 import tAuth from "@/services/telpAuth";
+import { FirebaseAuthTypes } from "@react-native-firebase/auth";
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 
 
@@ -8,12 +9,17 @@ export const tAuthApi = createApi({
     endpoints: (builder) => ({
 
         signUp: builder.query({
-          queryFn: async (args) => {
-            try {
-              const user = await tAuth.signUp("testemail1232132@gmail.com", "123141241231")
-              return { data: user }
+          queryFn: async (userParams) => {
+            try {              
+              console.debug("signing up")
+              const userResponse: FirebaseAuthTypes.UserCredential = await tAuth.signUp(userParams.email, userParams.password)
+              const user = userResponse.user
+
+              return { data: {email: user.email, uid: user.uid} }
             } catch (error) {
-              return { error }
+              console.debug("error")
+              console.debug(error)
+              return { error: null }
             }
           },
         }),

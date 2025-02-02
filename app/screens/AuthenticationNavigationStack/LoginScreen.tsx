@@ -1,21 +1,25 @@
 import { View, Text, Button } from 'react-native'
 import React, { useState } from 'react'
 
-import { useLazySignUpQuery } from '../slices/tAuthApiSlice';
+import { useLazySignUpQuery } from '../../slices/tAuthApiSlice';
 import tAuth from '@/services/telpAuth';
+import { TabActions } from '@react-navigation/native';
+
+import { useNavigation } from 'expo-router';
 
 export default function LoginScreen() {
 
-  const [triggerSignUp, { data, isLoading, error }] = useLazySignUpQuery();
+  const navigation = useNavigation()
+  const [triggerSignUp, { data, isLoading, isFetching, error }] = useLazySignUpQuery();
   const [userParams, setUserParams] = useState({
-    email: "testemail1@gmail.com",
+    email: "testemail111@gmail.com",
     password: "password123456"
   })
 
   const [testValue, setTestValue] = useState(true)
 
   const handleSignUp = () => {
-    triggerSignUp(testValue)
+    triggerSignUp(userParams, false)
   }
 
   const handleSignOut = () => {
@@ -26,16 +30,29 @@ export default function LoginScreen() {
     tAuth.signIn(userParams.email, userParams.password)
   }
 
+  const handleCheck = () => {
+    console.debug(data, isLoading, error)
+    console.debug(tAuth.getCurrentUser())
+  }
+
+  const handleNavigation = () => {
+    navigation.navigate("Registration")
+  }
+
   return (
     <View>
-      <Text>LoginScreen Test</Text>
       <Button
         title='Sign Up'
         onPress={() => { handleSignUp() }}
       ></Button>
-      <Button title='Check' onPress={() => { console.debug(data, isLoading, error) }} />
+      <Button title='Check' onPress={() => { handleCheck() }} />
       <Button title='Sign Out' onPress={() => { handleSignOut() }} />
       <Button title='Sign In' onPress={() => { handleSignIn() }} />
+      <Button title='To Registration' onPress={() => { handleNavigation() }}/>
+      <Text>
+        IsLoading: {isLoading.toString()} {"\n"}
+        IsFetching: {isFetching.toString()}
+      </Text>
       {data ?
         <Text>
           {}

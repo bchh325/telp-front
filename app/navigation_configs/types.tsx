@@ -8,3 +8,8 @@ export type HomeStackParamList = {
     Places: undefined,
     Information: undefined
 }
+
+export type AuthStackParamList = {
+    Login: undefined,
+    Registration: undefined
+}

@@ -2,18 +2,20 @@ import { Text, View } from "react-native";
 import React from 'react'
 import store from "./state/store";
 
-import { Provider, useSelector, useDispatch } from "react-redux";
+import { Provider } from "react-redux";
 import NavigationBar from "@/app/components/NavigationBar";
 import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import UserAccountScreen from "./screens/MainNavigationStack/UserAccountScreen";
-import { MainStackParamList } from "./navigation_configs/types";
+import { MainStackParamList, AuthStackParamList } from "./navigation_configs/types";
 import Favorites from "./screens/MainNavigationStack/Favorites";
 import HomeScreen from "./screens/MainNavigationStack/HomeScreen";
-import LoginScreen from "./screens/LoginScreen";
+import LoginScreen from "./screens/AuthenticationNavigationStack/LoginScreen";
 import { useState } from "react";
+import RegistrationScreen from "./screens/AuthenticationNavigationStack/RegistrationScreen";
 
 const MainNavigationStack = createNativeStackNavigator<MainStackParamList>()
+const AuthNavigationStack = createNativeStackNavigator<AuthStackParamList>()
 
 export default function Index() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -27,7 +29,15 @@ export default function Index() {
   return (
     <Provider store={store}>
       {!loggedIn &&
-        <LoginScreen />
+        <>
+        <AuthNavigationStack.Navigator
+          screenOptions={screenOptions}
+          initialRouteName="Login"
+        >
+          <AuthNavigationStack.Screen name="Login" component={LoginScreen} />
+          <AuthNavigationStack.Screen name="Registration" component={RegistrationScreen} />
+        </AuthNavigationStack.Navigator>
+      </>
       }
 
       {loggedIn &&
