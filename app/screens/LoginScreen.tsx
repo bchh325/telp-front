@@ -1,15 +1,29 @@
 import { View, Text, Button } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
-import { useLazyGetGreetingQuery } from '../slices/apiSlice'
+import { useLazySignUpQuery } from '../slices/tAuthApiSlice';
 import tAuth from '@/services/telpAuth';
 
 export default function LoginScreen() {
 
-  const [triggerGetGreeting, { data, isLoading, error }] = useLazyGetGreetingQuery();
+  const [triggerSignUp, { data, isLoading, error }] = useLazySignUpQuery();
+  const [userParams, setUserParams] = useState({
+    email: "testemail1@gmail.com",
+    password: "password123456"
+  })
 
-  const handlePress = () => {
-    tAuth.signUp("testemail@gmail.com", "password123456")
+  const [testValue, setTestValue] = useState(true)
+
+  const handleSignUp = () => {
+    triggerSignUp(testValue)
+  }
+
+  const handleSignOut = () => {
+    tAuth.signOut()
+  }
+
+  const handleSignIn = () => {
+    tAuth.signIn(userParams.email, userParams.password)
   }
 
   return (
@@ -17,12 +31,14 @@ export default function LoginScreen() {
       <Text>LoginScreen Test</Text>
       <Button
         title='Sign Up'
-        onPress={() => { handlePress() }}
+        onPress={() => { handleSignUp() }}
       ></Button>
       <Button title='Check' onPress={() => { console.debug(data, isLoading, error) }} />
+      <Button title='Sign Out' onPress={() => { handleSignOut() }} />
+      <Button title='Sign In' onPress={() => { handleSignIn() }} />
       {data ?
         <Text>
-          {data.response}
+          {}
           {typeof(data)}
         </Text>
         :

@@ -1,22 +1,35 @@
-import { getAuth, createUserWithEmailAndPassword } from "@react-native-firebase/auth";
+import { getAuth, signOut } from "@react-native-firebase/auth";
+
 
 const tAuth = {
     signUp: async (email: string, password: string) => {
-        let auth = null
         try {
-            auth = getAuth()
+            const auth = getAuth()
+            const signUpResponse = await auth?.createUserWithEmailAndPassword(email, password)
+            return signUpResponse
+        } catch (err) {
+            return err
+        }
+    },
+
+    signOut: async () => {
+        try {
+            const auth = getAuth()
+            const signOutResponse = await auth?.signOut()
+            console.debug(signOutResponse)
         } catch (err) {
             console.debug(err)
         }
-        
-        auth ? createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredentials) => {
-                console.debug("successful sign up")
-            })
-            .catch((err) => {
-                console.debug(err)
-            })
-        : null
+    },
+
+    signIn: async (email: string, password: string) => {
+        try {
+            const auth = getAuth()
+            const signInResponse = await auth?.signInWithEmailAndPassword(email, password)
+            console.debug(signInResponse)
+        } catch (err) {
+            console.debug(err)
+        }
     }
 }
 
