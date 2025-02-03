@@ -19,7 +19,7 @@ export default function LoginScreen() {
   const [testValue, setTestValue] = useState(true)
 
   const handleSignUp = () => {
-    triggerSignUp(userParams, false)
+    triggerSignUp(userParams)
   }
 
   const handleSignOut = () => {

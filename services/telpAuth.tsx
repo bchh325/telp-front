@@ -1,32 +1,30 @@
 import { getAuth, signOut } from "@react-native-firebase/auth";
 import { FirebaseAuthTypes } from "@react-native-firebase/auth";
 
-
 const tAuth = {
-    signUp:  (email: string, password: string): Promise<FirebaseAuthTypes.UserCredential> => {
+    signUp: async (email: string, password: string): Promise<FirebaseAuthTypes.UserCredential | Error> => {
         try {
-            const auth = getAuth()
-            const signUpResponse = auth?.createUserWithEmailAndPassword(email, password)
+            const signUpResponse = await getAuth().createUserWithEmailAndPassword(email, password)
+            console.debug(signUpResponse)
             return signUpResponse
         } catch (err: any) {
-            return err
+            console.debug("ERROR SERVICE: ", err.message)
+            return new Error(err.message.split('] ')[1])
         }
     },
 
     signOut: async () => {
         try {
-            const auth = getAuth()
-            const signOutResponse = await auth?.signOut()
+            const signOutResponse = await getAuth().signOut()
             console.debug(signOutResponse)
         } catch (err) {
-            console.debug(err)
+            console.debug("error:", err)
         }
     },
 
     signIn: async (email: string, password: string) => {
         try {
-            const auth = getAuth()
-            const signInResponse = await auth?.signInWithEmailAndPassword(email, password)
+            const signInResponse = await getAuth().signInWithEmailAndPassword(email, password)
             console.debug(signInResponse)
         } catch (err) {
             console.debug(err)
@@ -35,8 +33,7 @@ const tAuth = {
 
     getCurrentUser: () => {
         try {
-            const auth = getAuth()
-            return auth?.currentUser
+            return getAuth().currentUser
         } catch (err) {
             console.debug(err)
         }
