@@ -9,7 +9,7 @@ import { UserSignUpParams } from '@/app/interfaces';
 
 export default function RegistrationScreen() {
   const navigation = useNavigation()
-  const [triggerSignUp, { data, isLoading, isFetching, error }] = useLazySignUpQuery();
+  const [triggerSignUp, { data, isLoading, isFetching, error, isError }] = useLazySignUpQuery();
   const [userSignUpParams, setUserSignUpParams] = useState<UserSignUpParams>({
     email: "testemail@gmail.com",
     password: "321321321321321"
@@ -49,7 +49,8 @@ export default function RegistrationScreen() {
         Data: {data ? data.toString() : ""} {"\n"}
         isLoading: {isLoading.toString()} {"\n"}
         isFetching: {isFetching.toString()} {"\n"}
-        error: { error ? error.toString() : ""}
+        error: { error ? error.toString() : ""} {"\n"}
+        isError: {isError.toString()} {"\n"}
       </Text>
     </View>
   )

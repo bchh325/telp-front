@@ -17,8 +17,10 @@ const tAuth = {
         try {
             const signOutResponse = await getAuth().signOut()
             console.debug(signOutResponse)
-        } catch (err) {
-            console.debug("error:", err)
+            return signOutResponse
+        } catch (err: any) {
+            console.debug("ERROR SERVICE: ", err.message)
+            return new Error(err.message.split('] ')[1])
         }
     },
 

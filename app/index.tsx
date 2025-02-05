@@ -23,8 +23,8 @@ export default function Index() {
 
   store.subscribe(() => {
     const loggedInState = store.getState().authentication.value
+    //console.debug("IsLoggedIn: ", loggedInState)
     setLoggedIn(loggedInState)
-    console.debug("IsLoggedIn: ", loggedInState)
   })
 
   

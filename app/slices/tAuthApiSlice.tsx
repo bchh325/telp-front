@@ -1,5 +1,5 @@
 import tAuth from "@/services/telpAuth";
-import { FirebaseAuthTypes } from "@react-native-firebase/auth";
+import { FirebaseAuthTypes, signOut } from "@react-native-firebase/auth";
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { UserSignInParams, UserSignUpParams } from "../interfaces";
 
@@ -42,8 +42,21 @@ export const tAuthApi = createApi({
       },
     }),
 
+    signOut: builder.query<Object, void>({
+      queryFn: async () => {
+        const signOutResponse = await tAuth.signOut()
+
+        console.debug("Sign Out Response: ", signOutResponse)
+        if (signOutResponse !instanceof Error) {
+          return { error: "Error signing out" }
+        }
+        
+        return { data: "Sign out successful" }
+      }
+    })
+
   }),
 })
 
-export const { useLazySignUpQuery, useLazySignInQuery } = tAuthApi
+export const { useLazySignUpQuery, useLazySignInQuery, useLazySignOutQuery } = tAuthApi
 
