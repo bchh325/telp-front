@@ -1,25 +1,32 @@
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TextInput } from 'react-native'
 import React, { useState } from 'react'
 
-import { useLazySignUpQuery } from '../../slices/tAuthApiSlice';
+import { useLazySignUpQuery, useLazySignInQuery } from '../../slices/tAuthApiSlice';
 import tAuth from '@/services/telpAuth';
 import { TabActions } from '@react-navigation/native';
 
 import { useNavigation } from 'expo-router';
+import { useDispatch } from 'react-redux';
+import { setUserSignedIn, setUserSignedOut } from '@/app/slices/authenticationSlice';
 
 export default function LoginScreen() {
+  const dispatch = useDispatch()
 
   const navigation = useNavigation()
-  const [triggerSignUp, { data, isLoading, isFetching, error }] = useLazySignUpQuery();
-  const [userParams, setUserParams] = useState({
-    email: "testemail111@gmail.com",
-    password: "password123456"
+  const [triggerSignIn, { data, isLoading, isFetching, error, isError }] = useLazySignInQuery();
+  const [userSignInParams, setUserSignInParams] = useState({
+    email: "",
+    password: ""
   })
+
+  const handleTextChange = (key: keyof typeof userSignInParams, input: string) => {
+    setUserSignInParams((prev) => ({ ...prev, [key]: input }))
+  }
 
   const [testValue, setTestValue] = useState(true)
 
   const handleSignUp = () => {
-    triggerSignUp(userParams)
+    triggerSignIn(userSignInParams)
   }
 
   const handleSignOut = () => {
@@ -27,7 +34,8 @@ export default function LoginScreen() {
   }
 
   const handleSignIn = () => {
-    tAuth.signIn(userParams.email, userParams.password)
+    triggerSignIn(userSignInParams)
+    dispatch(setUserSignedIn())
   }
 
   const handleCheck = () => {
@@ -50,18 +58,16 @@ export default function LoginScreen() {
       <Button title='Sign In' onPress={() => { handleSignIn() }} />
       <Button title='To Registration' onPress={() => { handleNavigation() }}/>
       <Text>
-        IsLoading: {isLoading.toString()} {"\n"}
-        IsFetching: {isFetching.toString()}
+        Data: {data ? data.toString() : ""} {"\n"}
+        isLoading: {isLoading.toString()} {"\n"}
+        isFetching: {isFetching.toString()} {"\n"}
+        error: { error ? error.toString() : ""} {"\n"}
+        isError: {isError.toString()}
+
       </Text>
-      {data ?
-        <Text>
-          {}
-          {typeof(data)}
-        </Text>
-        :
-        <Text>
-          No Data
-        </Text>}
+      <TextInput placeholder='email' value={userSignInParams.email} onChangeText={(text) => handleTextChange("email", text)}/>
+      <TextInput placeholder='password' value={userSignInParams.password} onChangeText={(text) => handleTextChange("password", text)}/>
+
     </View>
   )
 }

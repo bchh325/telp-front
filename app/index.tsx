@@ -1,8 +1,8 @@
 import { Text, View } from "react-native";
 import React from 'react'
-import store from "./state/store";
+import { AppStore, store } from "./state/store";
 
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import NavigationBar from "@/app/components/NavigationBar";
 import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
@@ -21,6 +21,13 @@ export default function Index() {
   const [loggedIn, setLoggedIn] = useState(false)
   const navigationObject = useNavigation()
 
+  store.subscribe(() => {
+    const loggedInState = store.getState().authentication.value
+    setLoggedIn(loggedInState)
+    console.debug("IsLoggedIn: ", loggedInState)
+  })
+
+  
   const screenOptions: NativeStackNavigationOptions = {
     headerShown: false,
     animation: "none"
@@ -30,14 +37,14 @@ export default function Index() {
     <Provider store={store}>
       {!loggedIn &&
         <>
-        <AuthNavigationStack.Navigator
-          screenOptions={screenOptions}
-          initialRouteName="Login"
-        >
-          <AuthNavigationStack.Screen name="Login" component={LoginScreen} />
-          <AuthNavigationStack.Screen name="Registration" component={RegistrationScreen} />
-        </AuthNavigationStack.Navigator>
-      </>
+          <AuthNavigationStack.Navigator
+            screenOptions={screenOptions}
+            initialRouteName="Login"
+          >
+            <AuthNavigationStack.Screen name="Login" component={LoginScreen} />
+            <AuthNavigationStack.Screen name="Registration" component={RegistrationScreen} />
+          </AuthNavigationStack.Navigator>
+        </>
       }
 
       {loggedIn &&

@@ -22,12 +22,15 @@ const tAuth = {
         }
     },
 
-    signIn: async (email: string, password: string) => {
+    signIn: async (email: string, password: string): Promise<FirebaseAuthTypes.UserCredential | Error> => {
         try {
             const signInResponse = await getAuth().signInWithEmailAndPassword(email, password)
             console.debug(signInResponse)
-        } catch (err) {
+
+            return signInResponse
+        } catch (err: any) {
             console.debug(err)
+            return new Error(err.message.split('] ')[1])
         }
     },
 
