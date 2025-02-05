@@ -1,7 +1,7 @@
 import { View, Text, Button, TextInput } from 'react-native'
 import React from 'react'
 import { useNavigation } from 'expo-router'
-import styles from '../styles/RegistrationScreenStyle'
+import styles from './styles/RegistrationScreenStyle'
 import { useLazySignUpQuery } from '../../slices/tAuthApiSlice';
 import { useState } from 'react';
 import { UserSignUpParams } from '@/app/interfaces';

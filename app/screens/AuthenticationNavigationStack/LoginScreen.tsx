@@ -1,16 +1,21 @@
-import { View, Text, Button, TextInput } from 'react-native'
+import { View, Text, TextInput, ImageBackground, StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
+import { Dimensions } from 'react-native';
 
 import { useLazySignInQuery } from '../../slices/tAuthApiSlice';
-import tAuth from '@/services/telpAuth';
+import styles from './styles/LoginScreenStyle';
 
 import { useNavigation } from 'expo-router';
 import { useDispatch } from 'react-redux';
 import { setUserSignedIn } from '@/app/slices/authenticationSlice';
+import InputField from '@/app/components/InputField';
+import Button from '@/app/components/Button';
 
 export default function LoginScreen() {
   const dispatch = useDispatch()
   const navigation = useNavigation()
+  const windowHeight = Dimensions.get("window").height
+  const statusBarHeight = StatusBar.currentHeight
 
   const [triggerSignIn, { data, isLoading, isFetching, error, isError }] = useLazySignInQuery();
   const [userSignInParams, setUserSignInParams] = useState({
@@ -36,7 +41,6 @@ export default function LoginScreen() {
     }
 
     triggerSignIn(userSignInParams)
-    //dispatch(setUserSignedIn())
   }
 
 
@@ -48,22 +52,30 @@ export default function LoginScreen() {
     dispatch(setUserSignedIn())
   }
 
+  const screenHeight = {
+    height: windowHeight - (statusBarHeight ? statusBarHeight : 0)
+  }
+
   return (
-    <View>
-      <Button title='Sign In' onPress={() => { handleSignIn() }} />
-      <Button title='To Registration' onPress={() => { handleNavigation() }} />
-      <Button title='Manual Dispatch' onPress={() => { manualDispatch() }} />
-      <Text>
-        Data: {data ? data.toString() : ""} {"\n"}
-        isLoading: {isLoading.toString()} {"\n"}
-        isFetching: {isFetching.toString()} {"\n"}
-        error: {error ? error.toString() : ""} {"\n"}
-        isError: {isError.toString()}
-
-      </Text>
-      <TextInput placeholder='email' value={userSignInParams.email} onChangeText={(text) => handleTextChange("email", text)} />
-      <TextInput placeholder='password' value={userSignInParams.password} onChangeText={(text) => handleTextChange("password", text)} />
-
-    </View>
+    <>
+      <View style={styles.imageContainer}>
+        <ImageBackground style={[styles.image, screenHeight]} source={require("../../../assets/images/background.jpg")} />
+      </View>
+      <View style={[styles.container, screenHeight]}>
+        <View style={styles.logoContainer}>
+        </View>
+        <View style={styles.authContainer}>
+          <View style={styles.inputContainer}>
+            <InputField changeKey="email" value={userSignInParams.email} onChangeText={handleTextChange} title="Email Address" placeholder="Email Address" />
+            <InputField secureTextEntry={true} changeKey="password" value={userSignInParams.password} onChangeText={handleTextChange} title="Password" placeholder="Password" />
+          </View>
+          <View style={styles.buttonContainer}>
+            <Button onPress={handleSignIn} title="Login" backgroundColor='red' textColor='white' height={50} bolded={true} />
+            <Button onPress={() => { console.debug("Forgot Password") }} title="Forgot password?" textColor='white' underlined={true} bolded={true} fixWidthToContent={true}/>
+            <Button onPress={handleNavigation} title="Create an account" backgroundColor='white' textColor='red' height={50} bolded={true}/>
+          </View>
+        </View>
+      </View>
+    </>
   )
 }
