@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setUserSignedIn } from '@/app/slices/authenticationSlice';
 import InputField from '@/app/components/InputField';
 import Button from '@/app/components/Button';
-import { StackActions } from '@react-navigation/native';
+import { ActivityIndicator } from 'react-native';
 
 export default function LoginScreen() {
   const dispatch = useDispatch()
@@ -56,6 +56,14 @@ export default function LoginScreen() {
     height: windowHeight - (statusBarHeight ? statusBarHeight : 0)
   }
 
+  const renderLoginText = () => {
+      if (isFetching) {
+        return <ActivityIndicator color="white" size={"small"}/>
+      }
+
+      return "Login"
+  }
+
   return (
     <View style={[styles.container, screenHeight]}>
       <View style={styles.logoContainer}>
@@ -66,7 +74,7 @@ export default function LoginScreen() {
           <InputField secureTextEntry={true} changeKey="password" value={userSignInParams.password} onChangeText={handleTextChange} title="Password" placeholder="Password" />
         </View>
         <View style={styles.buttonContainer}>
-          <Button onPress={handleSignIn} title="Login" backgroundColor='red' textColor='white' height={50} bolded={true} />
+          <Button onPress={handleSignIn} title={renderLoginText()} backgroundColor='red' textColor='white' height={50} bolded={true} />
           <Button onPress={() => { console.debug("Forgot Password") }} title="Forgot password?" textColor='white' underlined={true} bolded={true} fixWidthToContent={true} />
           <Button onPress={handleNavigation} title="Create an account" backgroundColor='white' textColor='red' height={50} bolded={true} />
         </View>

@@ -44,9 +44,10 @@ export default function Index() {
 
   return (
     <>
-      <View style={[styles.imageContainer, screenHeight]}>
+      {!loggedIn &&
+        <View style={[styles.imageContainer, screenHeight]}>
         <ImageBackground style={[styles.image, screenHeight]} source={require("../assets/images/background.jpg")} />
-      </View>
+      </View>}
       <Provider store={store}>
         {!loggedIn &&
           <>
@@ -54,8 +55,8 @@ export default function Index() {
               screenOptions={screenOptions}
               initialRouteName="Login"
             >
-              <AuthNavigationStack.Screen options={{presentation: "modal"}} name="Login" component={LoginScreen} />
-              <AuthNavigationStack.Screen options={{presentation: "modal"}} name="Registration" component={RegistrationScreen} />
+              <AuthNavigationStack.Screen options={{ presentation: "modal" }} name="Login" component={LoginScreen} />
+              <AuthNavigationStack.Screen options={{ presentation: "modal" }} name="Registration" component={RegistrationScreen} />
             </AuthNavigationStack.Navigator>
           </>
         }

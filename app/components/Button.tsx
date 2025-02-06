@@ -1,11 +1,11 @@
 import { View, Text, Pressable, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { Component, ReactElement } from 'react'
 
 type Props = {
     height?: number
     backgroundColor?: string
     textColor: string
-    title: string
+    title: string | ReactElement
     bolded?: boolean
     underlined?: boolean
     fixWidthToContent?: boolean
