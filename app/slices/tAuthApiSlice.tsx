@@ -17,7 +17,7 @@ export const tAuthApi = createApi({
       queryFn: async (userSignUpParams) => {
         const userResponse: FirebaseAuthTypes.UserCredential | Error = await tAuth.signUp(userSignUpParams.email, userSignUpParams.password)
 
-        if (userResponse !instanceof Error) {
+        if (userResponse instanceof Error) {
           return { error: userResponse.message }
         }
 
@@ -32,7 +32,7 @@ export const tAuthApi = createApi({
         console.debug(userSignInParams)
         const userResponse: FirebaseAuthTypes.UserCredential | Error = await tAuth.signIn(userSignInParams.email, userSignInParams.password)
 
-        if (userResponse !instanceof Error) {
+        if (userResponse instanceof Error) {
           return { error: userResponse.message }
         }
 
@@ -47,7 +47,7 @@ export const tAuthApi = createApi({
         const signOutResponse = await tAuth.signOut()
 
         console.debug("Sign Out Response: ", signOutResponse)
-        if (signOutResponse !instanceof Error) {
+        if (signOutResponse instanceof Error) {
           return { error: "Error signing out" }
         }
         
