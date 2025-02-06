@@ -3,8 +3,8 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 
 type Props = {
-    title: string
-    placeholder: string
+    title?: string
+    placeholder?: string
     value: string
     changeKey: string
     onChangeText: Function

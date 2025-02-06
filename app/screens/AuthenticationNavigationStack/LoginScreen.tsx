@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setUserSignedIn } from '@/app/slices/authenticationSlice';
 import InputField from '@/app/components/InputField';
 import Button from '@/app/components/Button';
+import { StackActions } from '@react-navigation/native';
 
 export default function LoginScreen() {
   const dispatch = useDispatch()
@@ -29,7 +30,6 @@ export default function LoginScreen() {
       dispatch(setUserSignedIn())
     }
   }, [data])
-
 
   const handleTextChange = (key: keyof typeof userSignInParams, input: string) => {
     setUserSignInParams((prev) => ({ ...prev, [key]: input }))
@@ -57,25 +57,20 @@ export default function LoginScreen() {
   }
 
   return (
-    <>
-      <View style={styles.imageContainer}>
-        <ImageBackground style={[styles.image, screenHeight]} source={require("../../../assets/images/background.jpg")} />
+    <View style={[styles.container, screenHeight]}>
+      <View style={styles.logoContainer}>
       </View>
-      <View style={[styles.container, screenHeight]}>
-        <View style={styles.logoContainer}>
+      <View style={styles.authContainer}>
+        <View style={styles.inputContainer}>
+          <InputField changeKey="email" value={userSignInParams.email} onChangeText={handleTextChange} title="Email Address" placeholder="john.doe@gmail.com" />
+          <InputField secureTextEntry={true} changeKey="password" value={userSignInParams.password} onChangeText={handleTextChange} title="Password" placeholder="Password" />
         </View>
-        <View style={styles.authContainer}>
-          <View style={styles.inputContainer}>
-            <InputField changeKey="email" value={userSignInParams.email} onChangeText={handleTextChange} title="Email Address" placeholder="Email Address" />
-            <InputField secureTextEntry={true} changeKey="password" value={userSignInParams.password} onChangeText={handleTextChange} title="Password" placeholder="Password" />
-          </View>
-          <View style={styles.buttonContainer}>
-            <Button onPress={handleSignIn} title="Login" backgroundColor='red' textColor='white' height={50} bolded={true} />
-            <Button onPress={() => { console.debug("Forgot Password") }} title="Forgot password?" textColor='white' underlined={true} bolded={true} fixWidthToContent={true}/>
-            <Button onPress={handleNavigation} title="Create an account" backgroundColor='white' textColor='red' height={50} bolded={true}/>
-          </View>
+        <View style={styles.buttonContainer}>
+          <Button onPress={handleSignIn} title="Login" backgroundColor='red' textColor='white' height={50} bolded={true} />
+          <Button onPress={() => { console.debug("Forgot Password") }} title="Forgot password?" textColor='white' underlined={true} bolded={true} fixWidthToContent={true} />
+          <Button onPress={handleNavigation} title="Create an account" backgroundColor='white' textColor='red' height={50} bolded={true} />
         </View>
       </View>
-    </>
+    </View>
   )
 }

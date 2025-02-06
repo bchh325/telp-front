@@ -36,7 +36,7 @@ export default function Button({
 
     return (
         <Pressable onPress={() => {onPress()}} style={[styles.container, containerStyle]}>
-            <Text style={[styles.text, textStyle, {borderColor: "blue", borderWidth: 1, alignSelf: "center"}]}>{title}</Text>
+            <Text style={[styles.text, textStyle, {alignSelf: "center"}]}>{title}</Text>
         </Pressable>
     )
 }
@@ -45,8 +45,6 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: "center",
         borderRadius: 45,
-        borderColor: "yellow",
-        borderWidth: 1
     },
 
     text: {

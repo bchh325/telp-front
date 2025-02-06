@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { Dimensions, ImageBackground, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from 'react'
 import { AppStore, store } from "./state/store";
 
@@ -20,46 +20,75 @@ const AuthNavigationStack = createNativeStackNavigator<AuthStackParamList>()
 export default function Index() {
   const [loggedIn, setLoggedIn] = useState(false)
   const navigationObject = useNavigation()
+  const windowHeight = Dimensions.get("window").height
+  const statusBarHeight = StatusBar.currentHeight
 
   store.subscribe(() => {
     const loggedInState = store.getState().authentication.value
-    //console.debug("IsLoggedIn: ", loggedInState)
     setLoggedIn(loggedInState)
   })
 
-  
+
   const screenOptions: NativeStackNavigationOptions = {
     headerShown: false,
-    animation: "none"
+    animation: "slide_from_left",
+    contentStyle: {
+      backgroundColor: "transparent"
+    },
+    presentation: "modal"
+  }
+
+  const screenHeight = {
+    height: windowHeight
   }
 
   return (
-    <Provider store={store}>
-      {!loggedIn &&
-        <>
-          <AuthNavigationStack.Navigator
-            screenOptions={screenOptions}
-            initialRouteName="Login"
-          >
-            <AuthNavigationStack.Screen name="Login" component={LoginScreen} />
-            <AuthNavigationStack.Screen name="Registration" component={RegistrationScreen} />
-          </AuthNavigationStack.Navigator>
-        </>
-      }
+    <>
+      <View style={[styles.imageContainer, screenHeight]}>
+        <ImageBackground style={[styles.image, screenHeight]} source={require("../assets/images/background.jpg")} />
+      </View>
+      <Provider store={store}>
+        {!loggedIn &&
+          <>
+            <AuthNavigationStack.Navigator
+              screenOptions={screenOptions}
+              initialRouteName="Login"
+            >
+              <AuthNavigationStack.Screen options={{presentation: "modal"}} name="Login" component={LoginScreen} />
+              <AuthNavigationStack.Screen options={{presentation: "modal"}} name="Registration" component={RegistrationScreen} />
+            </AuthNavigationStack.Navigator>
+          </>
+        }
 
-      {loggedIn &&
-        <>
-          <MainNavigationStack.Navigator
-            screenOptions={screenOptions}
-            initialRouteName="Home"
-          >
-            <MainNavigationStack.Screen name="Home" component={HomeScreen} />
-            <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
-            <MainNavigationStack.Screen name="Favorites" component={Favorites} />
-          </MainNavigationStack.Navigator>
-          <NavigationBar navigation={navigationObject} />
-        </>
-      }
-    </Provider>
+        {loggedIn &&
+          <>
+            <MainNavigationStack.Navigator
+              screenOptions={screenOptions}
+              initialRouteName="Home"
+            >
+              <MainNavigationStack.Screen name="Home" component={HomeScreen} />
+              <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
+              <MainNavigationStack.Screen name="Favorites" component={Favorites} />
+            </MainNavigationStack.Navigator>
+            <NavigationBar navigation={navigationObject} />
+          </>
+        }
+      </Provider>
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    backgroundColor: "black",
+    width: "100%",
+    position: "absolute",
+    zIndex: -1
+  },
+
+  image: {
+    position: "absolute",
+    width: "100%",
+    opacity: 0.2
+  }
+})

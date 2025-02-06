@@ -1,6 +1,7 @@
 export interface UserSignUpParams {
     email: string,
-    password: string
+    password: string,
+    passwordConfirm: string
 }
 
 export interface UserSignInParams {
