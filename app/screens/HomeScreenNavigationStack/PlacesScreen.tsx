@@ -3,12 +3,12 @@ import React from 'react'
 import PagerView from 'react-native-pager-view';
 import { Dimensions } from 'react-native';
 import Place from '@/app/components/Place';
-import { businesses_0, businesses_1 } from '@/constants/SampleData';
+import { businesses_0, businesses_1, businesses_2 } from '@/constants/SampleData';
 import SearchBar from '@/app/components/SearchBar';
 
 
 export default function PlacesScreen() {
-  const sampleData = businesses_1
+  const sampleData = businesses_2
 
   return (
     <>

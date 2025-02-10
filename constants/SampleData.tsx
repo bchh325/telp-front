@@ -3934,3 +3934,2006 @@
       }
     }
   }
+
+  export const businesses_2 = {
+    "businesses": [
+      {
+        "id": "iIX9hKaiJpjS0ZvxAvD7TA",
+        "alias": "lollicup-artesia",
+        "name": "Lollicup",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/X_FvD8nN4chVMXlh_3l4Lw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/lollicup-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 462,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 3.6,
+        "coordinates": {
+          "latitude": 33.8682827353477,
+          "longitude": -118.082352876663
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "17901 Pioneer Boulevard",
+          "address2": null,
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "17901 Pioneer Boulevard",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15628658338",
+        "display_phone": "(562) 865-8338",
+        "distance": 1296.8789365451296,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1000",
+                "end": "0000",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1000",
+                "end": "2300",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "UQfNq1YdMk0pnJKsXD2rNg",
+        "alias": "its-boba-time-artesia-artesia",
+        "name": "It's Boba Time - Artesia",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/ZZUvDH8dYwFp2wLRgQ_XnA/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/its-boba-time-artesia-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 563,
+        "categories": [
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          },
+          {
+            "alias": "shavedice",
+            "title": "Shaved Ice"
+          }
+        ],
+        "rating": 3.5,
+        "coordinates": {
+          "latitude": 33.867923,
+          "longitude": -118.083075
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "17901 Pioneer Blvd",
+          "address2": "Unit I",
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "17901 Pioneer Blvd",
+            "Unit I",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15628601919",
+        "display_phone": "(562) 860-1919",
+        "distance": 1353.4641671907125,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "http://itsbobatime.com/legacy/menus?category_id=1",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "BcekniF1I3xAkONVShohnQ",
+        "alias": "sharetea-cerritos-4",
+        "name": "Sharetea",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/fQF9lbpHNswRKVeRErGhyQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/sharetea-cerritos-4?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 1685,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 4.3,
+        "coordinates": {
+          "latitude": 33.85794,
+          "longitude": -118.07956
+        },
+        "transactions": [
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "11900 South St",
+          "address2": "Ste 106",
+          "address3": "",
+          "city": "Cerritos",
+          "zip_code": "90703",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "11900 South St",
+            "Ste 106",
+            "Cerritos, CA 90703"
+          ]
+        },
+        "phone": "+15628601988",
+        "display_phone": "(562) 860-1988",
+        "distance": 1367.3831044203657,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2300",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2300",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://www.1992sharetea.com/drinks-menu",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "xeR7mJmfbHWpTtGNalUr4A",
+        "alias": "quickly-artesia",
+        "name": "Quickly",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/2SvKVQV26kWGABk6XOuIew/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/quickly-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 161,
+        "categories": [
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          },
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "asianfusion",
+            "title": "Asian Fusion"
+          }
+        ],
+        "rating": 3.6,
+        "coordinates": {
+          "latitude": 33.865175,
+          "longitude": -118.0823349
+        },
+        "transactions": [
+          "delivery"
+        ],
+        "price": "$",
+        "location": {
+          "address1": "18361 Pioneer Blvd",
+          "address2": "",
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "18361 Pioneer Blvd",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15628098071",
+        "display_phone": "(562) 809-8071",
+        "distance": 1269.7627862100842,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2100",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1600",
+                "end": "2100",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2100",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2100",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2100",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2100",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2100",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "open24_hours": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "MeTH6hUjz0947ev6rHKxCA",
+        "alias": "wushiland-boba-cerritos-2",
+        "name": "Wushiland Boba",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/r_CrL6ZNKSJYnKtuSjRG5Q/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/wushiland-boba-cerritos-2?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 206,
+        "categories": [
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+          "latitude": 33.86540317945333,
+          "longitude": -118.0920357
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "11340 183rd St",
+          "address2": null,
+          "address3": "",
+          "city": "Cerritos",
+          "zip_code": "90703",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "11340 183rd St",
+            "Cerritos, CA 90703"
+          ]
+        },
+        "phone": "+15622023584",
+        "display_phone": "(562) 202-3584",
+        "distance": 2155.119213366464,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1130",
+                "end": "2200",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "ohBxvrsJXIGDkely828c2g",
+        "alias": "taste-tea-cafe-artesia",
+        "name": "Taste Tea Cafe",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/HRsRJzHyin7M-TT9EEcivQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/taste-tea-cafe-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 821,
+        "categories": [
+          {
+            "alias": "taiwanese",
+            "title": "Taiwanese"
+          },
+          {
+            "alias": "cafes",
+            "title": "Cafes"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          }
+        ],
+        "rating": 4.6,
+        "coordinates": {
+          "latitude": 33.8597555291258,
+          "longitude": -118.071864865901
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "18858 Norwalk Blvd",
+          "address2": "",
+          "address3": null,
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "18858 Norwalk Blvd",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15628650654",
+        "display_phone": "(562) 865-0654",
+        "distance": 708.5517243827832,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://www.tasteteacafetogo.com/menu/",
+          "open24_hours": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "RDGlGHnnZYI45BX7KSN7Vg",
+        "alias": "tapioca-express-cerritos",
+        "name": "Tapioca Express",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/i2-G0MHWy4ZUkZDpLbWWyw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/tapioca-express-cerritos?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 241,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 3.5,
+        "coordinates": {
+          "latitude": 33.87113691086254,
+          "longitude": -118.059090209171
+        },
+        "transactions": [
+          "delivery"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "12765 Towne Center Dr",
+          "address2": "",
+          "address3": "",
+          "city": "Cerritos",
+          "zip_code": "90703",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "12765 Towne Center Dr",
+            "Cerritos, CA 90703"
+          ]
+        },
+        "phone": "+15628606528",
+        "display_phone": "(562) 860-6528",
+        "distance": 1082.1897089104532,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://tapiocaexpress.com/menu/",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "B-rsH8OKByRTGtPU7x0f-w",
+        "alias": "tastea-artesia-pioneer-artesia",
+        "name": "Tastea  Artesia - Pioneer",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/MFyYNQQtQdI_jDHHkJGxBQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/tastea-artesia-pioneer-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 386,
+        "categories": [
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 4.2,
+        "coordinates": {
+          "latitude": 33.865946,
+          "longitude": -118.081923
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "18174 Pioneer Blvd",
+          "address2": null,
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "18174 Pioneer Blvd",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15624031480",
+        "display_phone": "(562) 403-1480",
+        "distance": 1224.0136207008793,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "mMT7KYJtAWOOhGLKZNbeYg",
+        "alias": "kung-fu-tea-cerritos-artesia-3",
+        "name": "Kung Fu Tea Cerritos",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/fBy_qgFuZtp2b0RlUuF0BA/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/kung-fu-tea-cerritos-artesia-3?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 521,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 4.2,
+        "coordinates": {
+          "latitude": 33.86491,
+          "longitude": -118.09031
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "18300 Gridley Rd",
+          "address2": "Ste D2",
+          "address3": null,
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "18300 Gridley Rd",
+            "Ste D2",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15624033800",
+        "display_phone": "(562) 403-3800",
+        "distance": 1988.474106180033,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "http://www.kungfutea.com/menu/",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "TKHM3EEXTuDUHN0OkAGCPQ",
+        "alias": "class-302-cerritos",
+        "name": "Class 302",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/OndgUwRvo4-vPPxQp3Kccw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/class-302-cerritos?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 1025,
+        "categories": [
+          {
+            "alias": "taiwanese",
+            "title": "Taiwanese"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "soup",
+            "title": "Soup"
+          }
+        ],
+        "rating": 3.3,
+        "coordinates": {
+          "latitude": 33.8578874983889,
+          "longitude": -118.089321247311
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "11446 South St",
+          "address2": "",
+          "address3": "",
+          "city": "Cerritos",
+          "zip_code": "90703",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "11446 South St",
+            "Cerritos, CA 90703"
+          ]
+        },
+        "phone": "+15629241315",
+        "display_phone": "(562) 924-1315",
+        "distance": 2086.803005401026,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://class302irvine.com/menu/",
+          "open24_hours": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "ekekuC1TXlQpSWvLrNEYRA",
+        "alias": "lees-sandwiches-artesia",
+        "name": "Lee's Sandwiches",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/-2pfQp7qqM92ZW_Xf-ejSg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/lees-sandwiches-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 477,
+        "categories": [
+          {
+            "alias": "vietnamese",
+            "title": "Vietnamese"
+          },
+          {
+            "alias": "sandwiches",
+            "title": "Sandwiches"
+          },
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          }
+        ],
+        "rating": 3.1,
+        "coordinates": {
+          "latitude": 33.867491,
+          "longitude": -118.082655
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "18001 Pioneer Blvd",
+          "address2": "Ste A",
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "18001 Pioneer Blvd",
+            "Ste A",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15628096869",
+        "display_phone": "(562) 809-6869",
+        "distance": 1303.4254370120382,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2100",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "http://www.leesandwiches.com/main.php?act=product",
+          "open24_hours": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "vx4Frc5FuS6U5BjDY5kKJQ",
+        "alias": "gong-cha-cerritos",
+        "name": "Gong Cha",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/JGbwpS4AgNF5h5KfaNRJcw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/gong-cha-cerritos?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 404,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 4,
+        "coordinates": {
+          "latitude": 33.8585997,
+          "longitude": -118.0812133
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "11823 South St",
+          "address2": "",
+          "address3": null,
+          "city": "Cerritos",
+          "zip_code": "90703",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "11823 South St",
+            "Cerritos, CA 90703"
+          ]
+        },
+        "phone": "+15624748745",
+        "display_phone": "(562) 474-8745",
+        "distance": 1369.2835636233758,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "XFJqEI7aTXEIL0hFQ-deUA",
+        "alias": "7-leaves-cafe-cypress",
+        "name": "7 Leaves Cafe",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/WGcxtZjNHcW8KmGJi4oStw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/7-leaves-cafe-cypress?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 1026,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "macarons",
+            "title": "Macarons"
+          }
+        ],
+        "rating": 4.3,
+        "coordinates": {
+          "latitude": 33.83038,
+          "longitude": -118.029
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "9111 Valley View St",
+          "address2": "Ste 101",
+          "address3": "",
+          "city": "Cypress",
+          "zip_code": "90630",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "9111 Valley View St",
+            "Ste 101",
+            "Cypress, CA 90630"
+          ]
+        },
+        "phone": "+17142299900",
+        "display_phone": "(714) 229-9900",
+        "distance": 5368.305965693263,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "2200",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "2200",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "2200",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "2200",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "2300",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2300",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "0800",
+                "end": "2200",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://7leavescafe.com/menu/",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "q7f53U6x81XaqU1P6h8eRA",
+        "alias": "its-boba-time-buena-park-buena-park",
+        "name": "It's Boba Time - Buena Park",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/4tM4reohRxxAT34r8pLVKg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/its-boba-time-buena-park-buena-park?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 767,
+        "categories": [
+          {
+            "alias": "shavedice",
+            "title": "Shaved Ice"
+          },
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          }
+        ],
+        "rating": 3.1,
+        "coordinates": {
+          "latitude": 33.884094,
+          "longitude": -117.994202
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "5260 Beach Blvd",
+          "address2": "Ste A",
+          "address3": "",
+          "city": "Buena Park",
+          "zip_code": "90621",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "5260 Beach Blvd",
+            "Ste A",
+            "Buena Park, CA 90621"
+          ]
+        },
+        "phone": "+17145222622",
+        "display_phone": "(714) 522-2622",
+        "distance": 7181.621583136027,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "0000",
+                "day": 3
+              },
+              {
+                "is_overnight": true,
+                "start": "1100",
+                "end": "0100",
+                "day": 4
+              },
+              {
+                "is_overnight": true,
+                "start": "1100",
+                "end": "0100",
+                "day": 5
+              },
+              {
+                "is_overnight": true,
+                "start": "1100",
+                "end": "0030",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "Ix5ia6KA0wAJCJTcUmxSQA",
+        "alias": "boba-loca-la-palma-2",
+        "name": "Boba Loca",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/lkLGG66jIb61VCLgYoZULg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/boba-loca-la-palma-2?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 234,
+        "categories": [
+          {
+            "alias": "desserts",
+            "title": "Desserts"
+          },
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          }
+        ],
+        "rating": 3.6,
+        "coordinates": {
+          "latitude": 33.84713844399094,
+          "longitude": -118.04731995582624
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$",
+        "location": {
+          "address1": "4947 La Palma Ave",
+          "address2": null,
+          "address3": "",
+          "city": "La Palma",
+          "zip_code": "90623",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "4947 La Palma Ave",
+            "La Palma, CA 90623"
+          ]
+        },
+        "phone": "+15629241209",
+        "display_phone": "(562) 924-1209",
+        "distance": 2844.482688566722,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "0900",
+                "end": "2300",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "0900",
+                "end": "2300",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "0900",
+                "end": "2300",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "0900",
+                "end": "2300",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "0900",
+                "end": "2300",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "0900",
+                "end": "2300",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1000",
+                "end": "2300",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "GjLeK2L_EgJF48VsCIfrlw",
+        "alias": "italio-coffee-artesia",
+        "name": "Italio Coffee",
+        "image_url": "",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/italio-coffee-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 1,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "importedfood",
+            "title": "Imported Food"
+          }
+        ],
+        "rating": 4,
+        "coordinates": {
+          "latitude": 33.8682628,
+          "longitude": -118.0824249
+        },
+        "transactions": [],
+        "location": {
+          "address1": "17901 Pioneer Blvd",
+          "address2": "",
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "17901 Pioneer Blvd",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15628609499",
+        "display_phone": "(562) 860-9499",
+        "distance": 1355.481509255924,
+        "business_hours": [],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "xD69n7MoQWev18Rhon41Ng",
+        "alias": "cassidys-corner-cafe-cerritos-norwalk",
+        "name": "Cassidy's Corner Cafe Cerritos",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/y6Hs6rqKwip5KJXKKCxuSA/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/cassidys-corner-cafe-cerritos-norwalk?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 4,
+        "categories": [
+          {
+            "alias": "bagels",
+            "title": "Bagels"
+          },
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "donuts",
+            "title": "Donuts"
+          }
+        ],
+        "rating": 5,
+        "coordinates": {
+          "latitude": 33.886572,
+          "longitude": -118.09916
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "location": {
+          "address1": "11110 Alondra Blvd",
+          "address2": null,
+          "address3": "Cerritos College",
+          "city": "Norwalk",
+          "zip_code": "90650",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "11110 Alondra Blvd",
+            "Cerritos College",
+            "Norwalk, CA 90650"
+          ]
+        },
+        "phone": "",
+        "display_phone": "",
+        "distance": 3588.2939626261327,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "1900",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "1900",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "1900",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "1900",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "0700",
+                "end": "1300",
+                "day": 4
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://www.cassidyscornercafe.com/cafemenu",
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "UL5SjHS6wQTgIJbI4n-QIg",
+        "alias": "class-302-cafe-downey-downey",
+        "name": "Class 302 Cafe - Downey",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Zictmu3O5pJPpqYvzDGobg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/class-302-cafe-downey-downey?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 430,
+        "categories": [
+          {
+            "alias": "taiwanese",
+            "title": "Taiwanese"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          }
+        ],
+        "rating": 3.8,
+        "coordinates": {
+          "latitude": 33.9233452984978,
+          "longitude": -118.131893277168
+        },
+        "transactions": [
+          "delivery"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "8855 Apollo Way",
+          "address2": "Ste 224",
+          "address3": null,
+          "city": "Downey",
+          "zip_code": "90242",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "8855 Apollo Way",
+            "Ste 224",
+            "Downey, CA 90242"
+          ]
+        },
+        "phone": "+15624010180",
+        "display_phone": "(562) 401-0180",
+        "distance": 8678.331933203717,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2300",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2200",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": "https://class302irvine.com/menu/",
+          "open24_hours": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "bpsUhBqaNyssYM0p12KEhg",
+        "alias": "dd-mau-cerritos",
+        "name": "DD Mau",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/01_Twe1hPf6Svs0aRJXVig/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/dd-mau-cerritos?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 225,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "juicebars",
+            "title": "Juice Bars & Smoothies"
+          },
+          {
+            "alias": "bubbletea",
+            "title": "Bubble Tea"
+          }
+        ],
+        "rating": 4.4,
+        "coordinates": {
+          "latitude": 33.857625,
+          "longitude": -118.090327
+        },
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "price": "$$",
+        "location": {
+          "address1": "11408 South St",
+          "address2": "",
+          "address3": null,
+          "city": "Cerritos",
+          "zip_code": "90703",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "11408 South St",
+            "Cerritos, CA 90703"
+          ]
+        },
+        "phone": "+15622816999",
+        "display_phone": "(562) 281-6999",
+        "distance": 2180.8447686133995,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2000",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1100",
+                "end": "2100",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "waitlist_reservation": null
+        }
+      },
+      {
+        "id": "YhJ2bXYk-SIxpFfT4RgHUQ",
+        "alias": "cafe-maji-artesia",
+        "name": "Cafe Maji",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/C0QDO6N3Z3lB9h-syRxYQw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/cafe-maji-artesia?adjust_creative=osxxKcvCWyMKC_kQLGwh_A&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osxxKcvCWyMKC_kQLGwh_A",
+        "review_count": 1278,
+        "categories": [
+          {
+            "alias": "coffee",
+            "title": "Coffee & Tea"
+          },
+          {
+            "alias": "waffles",
+            "title": "Waffles"
+          },
+          {
+            "alias": "desserts",
+            "title": "Desserts"
+          }
+        ],
+        "rating": 4.1,
+        "coordinates": {
+          "latitude": 33.872691,
+          "longitude": -118.071431
+        },
+        "transactions": [
+          "delivery"
+        ],
+        "price": "$",
+        "location": {
+          "address1": "12232 Artesia Blvd",
+          "address2": "",
+          "address3": "",
+          "city": "Artesia",
+          "zip_code": "90701",
+          "country": "US",
+          "state": "CA",
+          "display_address": [
+            "12232 Artesia Blvd",
+            "Artesia, CA 90701"
+          ]
+        },
+        "phone": "+15622819511",
+        "display_phone": "(562) 281-9511",
+        "distance": 827.3090039741733,
+        "business_hours": [
+          {
+            "open": [
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 0
+              },
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 1
+              },
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 2
+              },
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 3
+              },
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 4
+              },
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 5
+              },
+              {
+                "is_overnight": false,
+                "start": "1500",
+                "end": "2330",
+                "day": 6
+              }
+            ],
+            "hours_type": "REGULAR",
+            "is_open_now": false
+          }
+        ],
+        "attributes": {
+          "business_temp_closed": null,
+          "menu_url": null,
+          "open24_hours": null,
+          "waitlist_reservation": false
+        }
+      }
+    ],
+    "total": 678,
+    "region": {
+      "center": {
+        "longitude": -118.06869506835938,
+        "latitude": 33.865558668599476
+      }
+    }
+  }

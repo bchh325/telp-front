@@ -31,7 +31,7 @@ export default function Index() {
 
   const screenOptions: NativeStackNavigationOptions = {
     headerShown: false,
-    animation: "slide_from_left",
+    animation: "default",
     contentStyle: {
       backgroundColor: "transparent"
     },

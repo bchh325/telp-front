@@ -11,18 +11,41 @@ interface PlaceProps {
 }
 
 export default function Place(props: PlaceProps) {
+
+    const outline = {
+        borderColor: "green",
+        borderWidth: 1, 
+        color: "white"
+    }
+
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={{ uri: props.imageUrl }} />
-            <View style={styles.informationContainer}>
-                <View style={{ width: "70%", borderColor: "red", borderWidth: 0 }}>
-                    <Text style={[styles.name, styles.textUniversal]} >{props.placeName}</Text>
-                    <View style={styles.ratingContainer}>
-                        <Text style={[styles.rating, styles.textUniversal]} >
-                            {props.placeRating}
-                        </Text>
-                        <Icon name='star' color="white" size={15} />
-                        <Text style={{ color: "white" }}>({props.reviewCount})</Text>
+            <View style={styles.content}>
+                <View style={styles.topContent}>
+                    <View style={styles.nameLocationContainer}>
+                        <Text style={styles.name}>Padekwa</Text>
+                        <Text style={styles.location}>Cerritos, CA</Text>
+                    </View>
+                    <View style={styles.ratingsContainer}>
+                        <View>
+                            <Text>1 2 3 4 5 (13.1k)</Text>
+                        </View>
+                        <Text>$ $ $</Text>
+                    </View>
+                    <View style={styles.statusContainer}>
+                        <Text style={styles.status}>Open until 6PM</Text>
+                    </View>
+                </View>
+                <View style={styles.bottomContent}>
+                    <View style={styles.infoContainer}>
+                        <Text>Additional Information</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                        <Text style={outline}>Icons</Text>
+                        <Text style={outline}>Icons</Text>
+                        <Text style={outline}>Icons</Text>
+                        <Text style={outline}>Icons</Text>
                     </View>
                 </View>
             </View>
@@ -42,53 +65,80 @@ const styles = StyleSheet.create({
         height: "100%",
         width: "100%",
     },
-    informationContainer: {
-        borderColor: "red",
-        borderWidth: 0,
+    content: {
+        borderColor: "blue",
+        borderWidth: 1,
         display: "flex",
-        flexDirection: "row",
+        height: "100%",
+        flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
         width: "100%",
-    },
-    buttonContainer: {
-        borderColor: "green",
-        borderWidth: 0,
-        flex: 1,
-        display: "flex",
-        height: "100%",
-        flexDirection: "row",
-        justifyContent: "flex-start"
-    },
-    buttonIcon: {
-        opacity: 1,
-        borderColor: "red",
-        borderWidth: 0,
-        alignSelf: "center",
     },
     image: {
         position: "absolute",
         height: "100%",
         width: "100%",
-        opacity: 0.4
+        opacity: 0.3
     },
-    name: {
-        fontSize: 36,
-        fontWeight: "bold"
-    },
-    ratingContainer: {
-        display: "flex",
-        flexDirection: "row",
+    topContent: {
+        flex: 1,
+        width: "100%",
+        borderColor: "red",
+        borderWidth: 1,
         justifyContent: "center",
         alignItems: "center",
-        columnGap: 5,
+        rowGap: 15,
     },
-    rating: {
-        fontSize: 16,
-
+    nameLocationContainer: {
+        borderColor: "yellow",
+        borderWidth: 1,
+        alignItems: "center",
     },
-    textUniversal: {
+    ratingsContainer: {
+        borderColor: "yellow",
+        borderWidth: 1
+    },
+    statusContainer: {
+        borderColor: "yellow",
+        borderWidth: 1
+    },
+    name: {
         color: "white",
-        textAlign: "center"
+        fontWeight: "bold",
+        fontSize: 36,
+        lineHeight: 36,
+        borderColor: "yellow",
+        textAlignVertical:"center",
     },
+    location: {
+        color: "white",
+        fontSize: 18,
+        borderColor: "yellow",
+        borderWidth: 0,
+        lineHeight: 18
+    },
+    status: {
+        color: "white",
+    },
+    bottomContent: {
+        flex: 1,
+        width: "100%",
+        borderColor: "green",
+        borderWidth: 2,
+        display: "flex",
+        flexDirection: "row",
+    },
+    infoContainer: {
+        flex: 1,
+        backgroundColor: "black",
+        opacity: 0.5,
+        marginBottom: "25%",
+    },
+    iconContainer: {
+        backgroundColor: "red",
+        display: "flex",
+        justifyContent: "space-between",
+        marginBottom: "25%",
+    }
 })
