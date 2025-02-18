@@ -15,6 +15,5 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: "33.33%",
         aspectRatio: 1,
-        alignSelf: "center"
     }
 })
