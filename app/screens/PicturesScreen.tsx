@@ -1,9 +1,17 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, FlatList, RefreshControl } from 'react-native'
+import React, { useState } from 'react'
 import Picture from '../components/Picture'
 
 export default function PicturesScreen() {
   const data: number[] = [1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1,]
+  const [isRefreshing, setIsRefreshing] = useState(false)
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true)
+    await setTimeout(() => {
+      setIsRefreshing(false)
+    }, 2000)
+  }
 
   return (
     <View style={styles.container}>
@@ -13,7 +21,13 @@ export default function PicturesScreen() {
       <FlatList 
         data={data}
         renderItem={Picture}
-        numColumns={3}/>
+        numColumns={3}
+        refreshControl={
+          <RefreshControl 
+          refreshing={isRefreshing}
+          onRefresh={handleRefresh}
+          />
+        }/>
     </View>
   )
 }
