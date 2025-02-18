@@ -24,7 +24,6 @@ export default function LoginScreen() {
     password: ""
   })
 
-
   useEffect(() => {
     if (data) {
       dispatch(setUserSignedIn())
@@ -43,7 +42,6 @@ export default function LoginScreen() {
     triggerSignIn(userSignInParams)
   }
 
-
   const handleNavigation = () => {
     navigation.navigate("Registration")
   }
@@ -60,7 +58,6 @@ export default function LoginScreen() {
       if (isFetching) {
         return <ActivityIndicator color="white" size={"small"}/>
       }
-
       return "Login"
   }
 
@@ -71,7 +68,7 @@ export default function LoginScreen() {
       <View style={styles.authContainer}>
         <View style={styles.inputContainer}>
           <InputField changeKey="email" value={userSignInParams.email} onChangeText={handleTextChange} title="Email Address" placeholder="john.doe@gmail.com" />
-          <InputField secureTextEntry={true} changeKey="password" value={userSignInParams.password} onChangeText={handleTextChange} title="Password" placeholder="Password" />
+          <InputField changeKey="password" value={userSignInParams.password} onChangeText={handleTextChange} title="Password" placeholder="Password" secureTextEntry={true} />
         </View>
         <View style={styles.buttonContainer}>
           <Button onPress={handleSignIn} title={renderLoginText()} backgroundColor='red' textColor='white' height={50} bolded={true} />

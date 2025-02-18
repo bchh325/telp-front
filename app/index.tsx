@@ -13,12 +13,14 @@ import HomeScreen from "./screens/MainNavigationStack/HomeScreen";
 import LoginScreen from "./screens/AuthenticationNavigationStack/LoginScreen";
 import { useState } from "react";
 import RegistrationScreen from "./screens/AuthenticationNavigationStack/RegistrationScreen";
+import PlacesScreen from "./screens/HomeScreenNavigationStack/PlacesScreen";
+import PicturesScreen from "./screens/PicturesScreen";
 
 const MainNavigationStack = createNativeStackNavigator<MainStackParamList>()
 const AuthNavigationStack = createNativeStackNavigator<AuthStackParamList>()
 
 export default function Index() {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(true)
   const navigationObject = useNavigation()
   const windowHeight = Dimensions.get("window").height
   const statusBarHeight = StatusBar.currentHeight
@@ -65,8 +67,9 @@ export default function Index() {
           <>
             <MainNavigationStack.Navigator
               screenOptions={screenOptions}
-              initialRouteName="Home"
+              initialRouteName="TestRoute"
             >
+              <MainNavigationStack.Screen name="TestRoute" component={PicturesScreen} />
               <MainNavigationStack.Screen name="Home" component={HomeScreen} />
               <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
               <MainNavigationStack.Screen name="Favorites" component={Favorites} />

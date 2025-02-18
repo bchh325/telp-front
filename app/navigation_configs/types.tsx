@@ -1,7 +1,8 @@
 export type MainStackParamList = {
     Home: undefined,
     UserAccount: undefined,
-    Favorites: undefined
+    Favorites: undefined,
+    TestRoute: undefined
 }
 
 export type HomeStackParamList = {

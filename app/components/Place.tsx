@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable } from 'react-native'
+import { View, Text, Image, Pressable, Button } from 'react-native'
 import React, { useMemo } from 'react'
 import { StyleSheet } from 'react-native'
 import Icon from '@expo/vector-icons/AntDesign';
@@ -42,10 +42,10 @@ export default function Place(props: PlaceProps) {
                         <Text>Additional Information</Text>
                     </View>
                     <View style={styles.iconContainer}>
-                        <Text style={outline}>Icons</Text>
-                        <Text style={outline}>Icons</Text>
-                        <Text style={outline}>Icons</Text>
-                        <Text style={outline}>Icons</Text>
+                        <Button title={"Like"}/>
+                        <Button title={"Pictures"}/>
+                        <Button title={"Menu"}/>
+                        <Button title={"Information"}/>
                     </View>
                 </View>
             </View>
