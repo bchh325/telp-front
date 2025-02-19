@@ -19,7 +19,9 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [""]
       }
-    }).concat(springApi.middleware).concat(tAuthApi.middleware)
+    })
+    .concat(springApi.middleware)
+    .concat(tAuthApi.middleware)
 
 })
 

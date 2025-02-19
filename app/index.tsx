@@ -25,10 +25,10 @@ export default function Index() {
   const windowHeight = Dimensions.get("window").height
   const statusBarHeight = StatusBar.currentHeight
 
-  store.subscribe(() => {
-    const loggedInState = store.getState().authentication.value
-    setLoggedIn(loggedInState)
-  })
+  // store.subscribe(() => {
+  //   const loggedInState = store.getState().authentication.value
+  //   setLoggedIn(loggedInState)
+  // })
 
 
   const screenOptions: NativeStackNavigationOptions = {

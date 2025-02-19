@@ -1,19 +1,28 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-interface greetingResponse {
-    response: string
-}
-
 export const springApi = createApi({
     reducerPath: 'springApi',
-    baseQuery: fetchBaseQuery({ baseUrl: "http://10.0.2.2:8080/" }),
+    baseQuery: fetchBaseQuery({ baseUrl: "http://10.39.109.157:8080/" }),
     endpoints: (builder) => ({
-        getGreeting: builder.query<greetingResponse, void>({
-            query: () => `greeting`,
+        getPaginatedPictures: builder.query<any, { placeId: string, documentIdKeyCursor: string, querySize: number}>({
+            query: (args) => {
+                const { placeId, documentIdKeyCursor, querySize } = args
+                return {
+                    url: '/pictures/paginate',
+                    params: {placeId, documentIdKeyCursor, querySize}
+                }
+            }
+            ,
+        }),
+        testApi: builder.query({
+            query: () => {
+                console.debug("testingApi")
+                return { url: ``}
+            }
         })
     }),
 })
 
-export const { useLazyGetGreetingQuery } = springApi
+export const { useGetPaginatedPicturesQuery, useTestApiQuery } = springApi
 

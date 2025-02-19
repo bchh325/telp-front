@@ -1,10 +1,22 @@
 import { View, Text, StyleSheet, FlatList, RefreshControl } from 'react-native'
 import React, { useState } from 'react'
 import Picture from '../components/Picture'
+import { useGetPaginatedPicturesQuery } from '../slices/springApiSlice'
 
 export default function PicturesScreen() {
-  const data: number[] = [1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1, 1,]
   const [isRefreshing, setIsRefreshing] = useState(false)
+  const [placeId, setPlaceId] = useState("dev-pic")
+  const [documentIdKeyCursor, setDocumentIdKeyCursor] = useState("")
+  const { data, error, isLoading } = useGetPaginatedPicturesQuery({
+    placeId: placeId,
+    documentIdKeyCursor: documentIdKeyCursor,
+    querySize: 40
+  })
+
+
+
+  console.debug(error)
+  const response = data ? data : ""
 
   const handleRefresh = async () => {
     setIsRefreshing(true)
@@ -17,17 +29,17 @@ export default function PicturesScreen() {
     <View style={styles.container}>
       <View style={styles.header}>
 
+        <Text>test</Text>
       </View>
-      <FlatList 
-        data={data}
+      {response.urls && <FlatList
+        data={response.urls}
         renderItem={Picture}
         numColumns={3}
         refreshControl={
-          <RefreshControl 
-          refreshing={isRefreshing}
-          onRefresh={handleRefresh}
-          />
-        }/>
+          <RefreshControl
+            refreshing={isRefreshing}
+            onRefresh={handleRefresh} />
+        } />}
     </View>
   )
 }
@@ -35,12 +47,13 @@ export default function PicturesScreen() {
 const styles = StyleSheet.create({
   container: {
     borderColor: "red",
-    borderWidth: 1,
+    borderWidth: 0,
   },
 
   header: {
     borderColor: "orange",
     borderWidth: 2,
-    height: "10%"
+    height: 100,
+    width: "100%"
   }
 })
