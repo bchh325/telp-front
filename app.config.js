@@ -13,8 +13,11 @@ export default {
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
       "supportsTablet": true,
-      "googleServicesFile": "./firebase_credentials/GoogleService-Info.plist",
+      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON_PLIST,
       "bundleIdentifier": "com.tofushop.telp"
     },
     "android": {
