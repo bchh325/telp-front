@@ -10,7 +10,7 @@ export default function Picture({ item }: Props) {
     console.debug("string item ")
     return (
         <View style={styles.container}>
-            <Image src={item.toString()} style={styles.image} />
+            <Image alt="Testing alt image" source={{uri: item.toString()}} style={styles.image} />
         </View>
     )
 }
@@ -26,5 +26,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: "100%",
         height: "100%",        
+        zIndex: 1
     }
 })
