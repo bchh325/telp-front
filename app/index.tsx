@@ -1,6 +1,6 @@
 import { Dimensions, ImageBackground, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from 'react'
-import { AppStore, store } from "./state/store";
+import { AppStore, store } from "./store/store";
 
 import { Provider, useSelector } from "react-redux";
 import NavigationBar from "@/app/components/NavigationBar";
