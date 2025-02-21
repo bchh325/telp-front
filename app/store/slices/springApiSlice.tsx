@@ -1,7 +1,7 @@
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Platform } from "react-native";
-import { PaginationQueryParams } from "../../types/interfaces";
+import { PaginationQueryParams, PaginationResponse } from "../../types/interfaces";
 
 const baseUrl = Platform.OS == "ios" ? "http://localhost:8080/" : "http://10.0.2.2:8080/"
 
@@ -11,7 +11,7 @@ export const springApi = createApi({
     reducerPath: 'springApi',
     baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
     endpoints: (builder) => ({
-        getPaginatedPictures: builder.query<any, PaginationQueryParams>({
+        getPaginatedPictures: builder.query<PaginationResponse, PaginationQueryParams>({
             query: (args) => {
                 const { placeId, documentIdKeyCursor, querySize } = args
                 return {
