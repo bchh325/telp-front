@@ -8,3 +8,9 @@ export interface UserSignInParams {
     email: string,
     password: string
 }
+
+export interface PaginationQueryParams {
+    placeId: string, 
+    documentIdKeyCursor: string, 
+    querySize: number
+}

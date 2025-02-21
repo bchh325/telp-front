@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, FlatList, RefreshControl } from 'react-native'
 import React, { useState } from 'react'
 import Picture from '../components/Picture'
-import { useGetPaginatedPicturesQuery } from '../slices/springApiSlice'
+import { useGetPaginatedPicturesQuery } from '../store/slices/springApiSlice'
 
 export default function PicturesScreen() {
   const [isRefreshing, setIsRefreshing] = useState(false)

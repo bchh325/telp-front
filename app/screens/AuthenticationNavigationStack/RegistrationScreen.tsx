@@ -2,13 +2,13 @@ import { View, Text, TextInput, Dimensions, StatusBar, ActivityIndicator } from 
 import React, { useEffect } from 'react'
 import { useNavigation } from 'expo-router'
 import styles from './styles/RegistrationScreenStyle'
-import { useLazySignUpQuery } from '../../slices/tAuthApiSlice';
+import { useLazySignUpQuery } from '../../store/slices/tAuthApiSlice';
 import { useState } from 'react';
-import { UserSignUpParams } from '@/app/interfaces';
+import { UserSignUpParams } from '@/app/types/interfaces';
 import InputField from '@/app/components/InputField';
 import Button from '@/app/components/Button';
 import { useDispatch } from 'react-redux';
-import { setUserSignedIn } from '@/app/slices/authenticationSlice';
+import { setUserSignedIn } from '@/app/store/slices/authenticationSlice';
 
 export default function RegistrationScreen() {
   const windowHeight = Dimensions.get("window").height
