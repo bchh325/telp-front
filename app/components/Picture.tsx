@@ -10,7 +10,7 @@ export default function Picture({ item }: Props) {
     console.debug("string item ")
     return (
         <View style={styles.container}>
-            <Image alt="Testing alt image" source={{uri: item.toString()}} style={styles.image} />
+            <Image source={{uri: item.toString()}} style={styles.image} />
         </View>
     )
 }
