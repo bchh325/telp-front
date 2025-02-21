@@ -13,7 +13,6 @@ export default function PicturesScreen() {
   })
 
   const [isRefreshing, setIsRefreshing] = useState(false)
-  const [isPaginating, setIsPaginating] = useState(false)
   const [placeId, setPlaceId] = useState("dev-pic")
   const [documentIdKeyCursor, setDocumentIdKeyCursor] = useState("")
   const [documentIdRefreshCursor, setDocumentIdRefreshCursor] = useState("")
@@ -26,57 +25,28 @@ export default function PicturesScreen() {
     querySize: 15
   })
 
-  const imageUrlsRef = useRef(imageUrls)
-
   useEffect(() => {
+    const updateData = (data: PaginationResponse) => {
+      setDocumentIdFutureCursor(data.documentIdStartKey)
+      setDocumentIdRefreshCursor(data.documentIdRefreshKey)
+      setImageUrls(prev => [...prev, ...data.urls])
+    }
+
     if (data) {
       updateData(data)
-      setIsPaginating(false)
     }
   }, [data])
 
-  useEffect(() => {
-    if (isPaginating) {
-      setDocumentIdKeyCursor(documentIdFutureCursor)
-    }
-  }, [isPaginating])
-
-  useEffect(() => {
-    imageUrlsRef.current = imageUrls
-  }, [imageUrls])
-
-  const updateData = (data: PaginationResponse) => {
-    console.debug("updatingData")
-    console.debug(data.documentIdStartKey)
-    setDocumentIdFutureCursor(data.documentIdStartKey)
-    setDocumentIdRefreshCursor(data.documentIdRefreshKey)
-    setImageUrls(prev => [...prev, ...data.urls])
-    imageUrlsRef.current = imageUrls
-  }
-
-  const onViewableItemsChanged = (viewToken: ExtendedViewTokens) => {
-    const lastViewObject = viewToken.viewableItems[viewToken.viewableItems.length - 1]
-    console.debug("LastViewObject Index:", lastViewObject.index)
-    console.debug("ImageUrlRef Max Index:", imageUrlsRef.current.length - 1)
-    const imageUrlsRefLength = imageUrlsRef.current.length
-
-    if (lastViewObject?.isViewable == true && lastViewObject?.index == imageUrlsRefLength - 1) {
-      console.debug("isviewable")
-      setIsPaginating(true)
-    }
+  const paginate = () => {
+    setDocumentIdKeyCursor(documentIdFutureCursor)
   }
 
   const handleRefresh = async () => {
     setIsRefreshing(true)
-    console.debug(documentIdKeyCursor)
-    console.debug(documentIdFutureCursor)
-    console.debug(documentIdRefreshCursor)
     await setTimeout(() => {
       setIsRefreshing(false)
     }, 2000)
   }
-
-  const viewabilityConfigCallbackPairs = useRef([{ viewabilityConfig, onViewableItemsChanged }])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -85,10 +55,11 @@ export default function PicturesScreen() {
         <Text>test</Text>
       </View>
       {imageUrls && <FlatList
-        viewabilityConfigCallbackPairs={viewabilityConfigCallbackPairs.current}
         data={imageUrls}
         renderItem={Picture}
         numColumns={3}
+        onEndReached={paginate}
+        onEndReachedThreshold={0.5}
         refreshControl={
           <RefreshControl
             refreshing={isRefreshing}
