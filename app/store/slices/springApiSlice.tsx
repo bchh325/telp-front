@@ -21,6 +21,15 @@ export const springApi = createApi({
             }
             ,
         }),
+        getPaginatedRefresh: builder.query<PaginationResponse, PaginationQueryParams>({
+            query: (args) => {
+                const {placeId, documentIdKeyCursor, querySize, isRefresh } = args
+                return {
+                    url: '/pictures/paginate',
+                    params: {placeId, documentIdKeyCursor, querySize, isRefresh}
+                }
+            }
+        }),
         testApi: builder.query({
             query: () => {
                 console.debug("testingApi")
@@ -30,5 +39,5 @@ export const springApi = createApi({
     }),
 })
 
-export const { useGetPaginatedPicturesQuery, useTestApiQuery } = springApi
+export const { useGetPaginatedPicturesQuery, useTestApiQuery, useLazyGetPaginatedRefreshQuery } = springApi
 

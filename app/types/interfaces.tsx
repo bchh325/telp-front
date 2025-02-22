@@ -15,6 +15,7 @@ export interface PaginationQueryParams {
     placeId: string, 
     documentIdKeyCursor: string, 
     querySize: number
+    isRefresh?: boolean
 }
 
 export interface ExtendedViewTokens extends ViewToken {
@@ -24,5 +25,5 @@ export interface ExtendedViewTokens extends ViewToken {
 export interface PaginationResponse {
     urls: string[],
     documentIdStartKey: string,
-    documentIdRefreshKey: string
+    documentIdRefreshKey: string,
 }
