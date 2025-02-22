@@ -15,6 +15,7 @@ import { useState } from "react";
 import RegistrationScreen from "./screens/AuthenticationNavigationStack/RegistrationScreen";
 import PlacesScreen from "./screens/HomeScreenNavigationStack/PlacesScreen";
 import PicturesScreen from "./screens/PicturesScreen";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const MainNavigationStack = createNativeStackNavigator<MainStackParamList>()
 const AuthNavigationStack = createNativeStackNavigator<AuthStackParamList>()
@@ -45,11 +46,11 @@ export default function Index() {
   }
 
   return (
-    <>
+    <SafeAreaProvider>
       {!loggedIn &&
         <View style={[styles.imageContainer, screenHeight]}>
-        <ImageBackground style={[styles.image, screenHeight]} source={require("../assets/images/background.jpg")} />
-      </View>}
+          <ImageBackground style={[styles.image, screenHeight]} source={require("../assets/images/background.jpg")} />
+        </View>}
       <Provider store={store}>
         {!loggedIn &&
           <>
@@ -78,7 +79,7 @@ export default function Index() {
           </>
         }
       </Provider>
-    </>
+    </SafeAreaProvider>
   );
 }
 
