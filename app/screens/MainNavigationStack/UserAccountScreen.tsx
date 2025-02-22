@@ -1,9 +1,9 @@
 import { View, Text, Button } from 'react-native'
 import React, { useEffect } from 'react'
 
-import { setUserSignedOut } from '@/app/slices/authenticationSlice'
+import { setUserSignedOut } from '@/app/store/slices/authenticationSlice'
 import { useDispatch } from 'react-redux'
-import { useLazySignOutQuery } from '@/app/slices/tAuthApiSlice'
+import { useLazySignOutQuery } from '@/app/store/slices/tAuthApiSlice'
 
 export default function UserAccountScreen() {
   const [triggerSignOut, { data, isLoading, isFetching, error, isError }] = useLazySignOutQuery();

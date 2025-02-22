@@ -2,12 +2,12 @@ import { View, Text, TextInput, ImageBackground, StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { Dimensions } from 'react-native';
 
-import { useLazySignInQuery } from '../../slices/tAuthApiSlice';
+import { useLazySignInQuery } from '../../store/slices/tAuthApiSlice';
 import styles from './styles/LoginScreenStyle';
 
 import { useNavigation } from 'expo-router';
 import { useDispatch } from 'react-redux';
-import { setUserSignedIn } from '@/app/slices/authenticationSlice';
+import { setUserSignedIn } from '@/app/store/slices/authenticationSlice';
 import InputField from '@/app/components/InputField';
 import Button from '@/app/components/Button';
 import { ActivityIndicator } from 'react-native';

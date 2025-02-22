@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import authenticationReducer from '../slices/authenticationSlice'
-import searchResultReducer from '../slices/searchResultSlice'
-import { springApi } from '../slices/springApiSlice'
-import { tAuthApi } from '../slices/tAuthApiSlice'
+import authenticationReducer from './slices/authenticationSlice'
+import searchResultReducer from './slices/searchResultSlice'
+import { springApi } from './slices/springApiSlice'
+import { tAuthApi } from './slices/tAuthApiSlice'
 
 
 
@@ -19,7 +19,9 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [""]
       }
-    }).concat(springApi.middleware).concat(tAuthApi.middleware)
+    })
+    .concat(springApi.middleware)
+    .concat(tAuthApi.middleware)
 
 })
 

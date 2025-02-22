@@ -1,19 +1,31 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 
-export default function Picture() {
+type Props = {
+    item: Object
+}
+
+export default function Picture({ item }: Props) {
+    // console.debug(item.toString())
+    // console.debug("string item ")
     return (
         <View style={styles.container}>
-            <Text>Image</Text>
+            <Image source={{uri: item.toString()}} style={styles.image} />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        borderColor: "green",
-        borderWidth: 1,
         width: "33.33%",
         aspectRatio: 1,
+    },
+
+    image: {
+        borderColor: "black",
+        borderWidth: 1,
+        width: "100%",
+        height: "100%",        
+        zIndex: 1
     }
 })

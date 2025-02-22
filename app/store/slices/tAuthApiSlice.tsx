@@ -1,7 +1,7 @@
-import tAuth from "@/services/telpAuth";
+import tAuth from "@/app/services/telpAuth";
 import { FirebaseAuthTypes, signOut } from "@react-native-firebase/auth";
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { UserSignInParams, UserSignUpParams } from "../interfaces";
+import { UserSignInParams, UserSignUpParams } from "../../types/interfaces";
 
 interface SignUpData {
   email: string,

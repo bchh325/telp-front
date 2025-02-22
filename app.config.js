@@ -1,3 +1,12 @@
+import * as dotenv from 'dotenv'
+import path from 'path';
+
+
+dotenv.config({
+  path: [path.resolve(__dirname, '.env.local')],
+})
+
+console.log("GOOGLE_SERVICES_JSON_PLIST:", process.env.GOOGLE_SERVICES_JSON_PLIST);
 export default {
   "expo": {
     "name": "telp-front",
@@ -13,8 +22,11 @@ export default {
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
       "supportsTablet": true,
-      "googleServicesFile": "./firebase_credentials/GoogleService-Info.plist",
+      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON_PLIST,
       "bundleIdentifier": "com.tofushop.telp"
     },
     "android": {
