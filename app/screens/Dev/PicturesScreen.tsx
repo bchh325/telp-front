@@ -1,10 +1,10 @@
-import { View, Text, StyleSheet, FlatList, RefreshControl, ViewabilityConfig, ViewToken, ViewabilityConfigCallbackPairs, ViewabilityConfigCallbackPair, FlatListComponent } from 'react-native'
-import React, { useEffect, useRef, useState } from 'react'
-import Picture from '../components/Picture'
-import { useGetPaginatedPicturesQuery, useLazyGetPaginatedRefreshQuery } from '../store/slices/springApiSlice'
+import Picture from '@/app/components/Picture'
+import React, { useEffect, useState } from 'react'
+import { FlatList, RefreshControl, StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { ExtendedViewTokens, PaginationQueryParams, PaginationResponse } from '../types/interfaces'
-import PicturesHeader from '../components/PicturesHeader'
+import PicturesHeader from '../../components/PicturesHeader'
+import { useGetPaginatedPicturesQuery, useLazyGetPaginatedRefreshQuery } from '../../store/slices/springApiSlice'
+import { PaginationQueryParams, PaginationResponse } from '../../types/interfaces'
 
 export default function PicturesScreen() {
   const [isRefresh, setIsRefresh] = useState(false)

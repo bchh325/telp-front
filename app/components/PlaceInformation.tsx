@@ -1,16 +1,13 @@
-import { View, Text, Image, Pressable, Button } from 'react-native'
-import React, { useMemo } from 'react'
-import { StyleSheet } from 'react-native'
-import Icon from '@expo/vector-icons/AntDesign';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 interface PlaceProps {
     placeName: string
     placeRating: number
-    imageUrl: string
     reviewCount: number
 }
 
-export default function Place(props: PlaceProps) {
+export default function PlaceInformation(props: PlaceProps) {
 
     const outline = {
         borderColor: "green",
@@ -19,8 +16,6 @@ export default function Place(props: PlaceProps) {
     }
 
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} source={{ uri: props.imageUrl }} />
             <View style={styles.content}>
                 <View style={styles.topContent}>
                     <View style={styles.nameLocationContainer}>
@@ -38,33 +33,13 @@ export default function Place(props: PlaceProps) {
                     </View>
                 </View>
                 <View style={styles.bottomContent}>
-                    <View style={styles.infoContainer}>
-                        <Text>Additional Information</Text>
-                    </View>
-                    <View style={styles.iconContainer}>
-                        <Button title={"Like"}/>
-                        <Button title={"Pictures"}/>
-                        <Button title={"Menu"}/>
-                        <Button title={"Information"}/>
-                    </View>
+                   
                 </View>
             </View>
-        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: 'rgba(0,0,0,1)',
-        borderColor: "red",
-        borderWidth: 0,
-        position: "relative",
-        height: "100%",
-        width: "100%",
-    },
     content: {
         borderColor: "blue",
         borderWidth: 1,
@@ -74,12 +49,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         alignItems: "center",
         width: "100%",
-    },
-    image: {
-        position: "absolute",
-        height: "100%",
-        width: "100%",
-        opacity: 0.3
     },
     topContent: {
         flex: 1,
@@ -129,16 +98,5 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
     },
-    infoContainer: {
-        flex: 1,
-        backgroundColor: "black",
-        opacity: 0.5,
-        marginBottom: "25%",
-    },
-    iconContainer: {
-        backgroundColor: "red",
-        display: "flex",
-        justifyContent: "space-between",
-        marginBottom: "25%",
-    }
+
 })

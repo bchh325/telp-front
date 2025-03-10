@@ -1,5 +1,5 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native'
-import React, { Component, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
+import { Pressable, StyleSheet, Text } from 'react-native'
 
 type Props = {
     height?: number

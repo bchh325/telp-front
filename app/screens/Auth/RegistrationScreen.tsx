@@ -1,14 +1,12 @@
-import { View, Text, TextInput, Dimensions, StatusBar, ActivityIndicator } from 'react-native'
-import React, { useEffect } from 'react'
-import { useNavigation } from 'expo-router'
-import styles from './styles/RegistrationScreenStyle'
-import { useLazySignUpQuery } from '../../store/slices/tAuthApiSlice';
-import { useState } from 'react';
-import { UserSignUpParams } from '@/app/types/interfaces';
-import InputField from '@/app/components/InputField';
 import Button from '@/app/components/Button';
-import { useDispatch } from 'react-redux';
+import InputField from '@/app/components/InputField';
 import { setUserSignedIn } from '@/app/store/slices/authenticationSlice';
+import { UserSignUpParams } from '@/app/types/interfaces';
+import { useNavigation } from 'expo-router';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, Dimensions, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { useLazySignUpQuery } from '../../store/slices/tAuthApiSlice';
 
 export default function RegistrationScreen() {
   const windowHeight = Dimensions.get("window").height
@@ -88,3 +86,42 @@ export default function RegistrationScreen() {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        width: "100%",
+        borderColor: "red",
+        borderWidth: 1,
+        paddingVertical: 20,
+    },
+
+    logoContainer: {
+        height: "15%",
+        borderColor: "red",
+        borderWidth: 1,
+    },
+
+    authContainer: {
+        marginHorizontal: 25,
+        height: "85%",
+        borderColor: "red",
+        borderWidth: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center"
+    },
+
+    inputContainer: {
+        borderColor: "green",
+        borderWidth: 1,
+        display: "flex",
+        rowGap: 20,
+        justifyContent: "center"
+    },
+
+    buttonContainer: {
+        borderColor: "green",
+        borderWidth: 1,
+        display: "flex",
+    },
+})

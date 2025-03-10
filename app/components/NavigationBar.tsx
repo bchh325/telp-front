@@ -1,11 +1,6 @@
-import { View, Text, Pressable } from 'react-native'
-import React, { useState } from 'react'
-import { StyleSheet } from 'react-native'
-import { Dimensions } from 'react-native'
 import Icon from '@expo/vector-icons/AntDesign'
-import { NavigationProp, NavigationState, StackNavigationState, useNavigationState } from '@react-navigation/native'
-import { current } from '@reduxjs/toolkit'
-import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors'
+import React, { useState } from 'react'
+import { Pressable, StyleSheet, View } from 'react-native'
 
 interface NavigationBarProps {
     navigation: any

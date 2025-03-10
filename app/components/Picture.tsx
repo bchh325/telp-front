@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
+import { Image, StyleSheet, View } from 'react-native'
 
 type Props = {
     item: Object

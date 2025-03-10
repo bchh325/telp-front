@@ -1,16 +1,12 @@
-import { View, Text, TextInput, ImageBackground, StatusBar } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { Dimensions } from 'react-native';
-
+import React, { useEffect, useState } from 'react';
+import { Dimensions, StatusBar, StyleSheet, View } from 'react-native';
 import { useLazySignInQuery } from '../../store/slices/tAuthApiSlice';
-import styles from './styles/LoginScreenStyle';
-
-import { useNavigation } from 'expo-router';
-import { useDispatch } from 'react-redux';
-import { setUserSignedIn } from '@/app/store/slices/authenticationSlice';
-import InputField from '@/app/components/InputField';
 import Button from '@/app/components/Button';
+import InputField from '@/app/components/InputField';
+import { setUserSignedIn } from '@/app/store/slices/authenticationSlice';
+import { useNavigation } from 'expo-router';
 import { ActivityIndicator } from 'react-native';
+import { useDispatch } from 'react-redux';
 
 export default function LoginScreen() {
   const dispatch = useDispatch()
@@ -79,3 +75,42 @@ export default function LoginScreen() {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+      width: "100%",
+      borderColor: "red",
+      borderWidth: 1,
+      paddingVertical: 20,
+  },
+
+  logoContainer: {
+      height: "15%",
+      borderColor: "red",
+      borderWidth: 1,
+  },
+
+  authContainer: {
+      marginHorizontal: 25,
+      height: "85%",
+      borderColor: "red",
+      borderWidth: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+  },
+
+  inputContainer: {
+      borderColor: "green",
+      borderWidth: 1,
+      display: "flex",
+      rowGap: 20,
+      justifyContent: "center"
+  },
+
+  buttonContainer: {
+      borderColor: "green",
+      borderWidth: 1,
+      display: "flex"
+  },
+})
