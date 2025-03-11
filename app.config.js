@@ -1,13 +1,15 @@
-import * as dotenv from 'dotenv'
-import path from 'path';
+
+// UNCOMMENT WHEN CREATING IOS BUILD
+// import * as dotenv from 'dotenv'
+// import path from 'path';
 
 
-dotenv.config({
-  path: [path.resolve(__dirname, '.env.local')],
-})
+// dotenv.config({
+//   path: [path.resolve(__dirname, '.env.local')],
+// })
 
-console.log("GOOGLE_SERVICES_JSON_PLIST:", process.env.GOOGLE_SERVICES_JSON_PLIST);
-console.log("GOOGLE_SERVICES_JSON:", process.env.GOOGLE_SERVICES_JSON);
+// console.log("GOOGLE_SERVICES_JSON_PLIST:", process.env.GOOGLE_SERVICES_JSON_PLIST);
+// console.log("GOOGLE_SERVICES_JSON:", process.env.GOOGLE_SERVICES_JSON);
 export default {
   "expo": {
     "name": "telp-front",
