@@ -3,7 +3,7 @@ import path from 'path';
 
 
 dotenv.config({
-  path: [path.resolve(__dirname, '.env')],
+  path: [path.resolve(__dirname, '.env.local')],
 })
 
 console.log("GOOGLE_SERVICES_JSON_PLIST:", process.env.GOOGLE_SERVICES_JSON_PLIST);
