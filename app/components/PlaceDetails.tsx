@@ -7,13 +7,7 @@ interface PlaceProps {
     reviewCount: number
 }
 
-export default function PlaceInformation(props: PlaceProps) {
-
-    const outline = {
-        borderColor: "green",
-        borderWidth: 1, 
-        color: "white"
-    }
+export default function PlaceDetails(props: PlaceProps) {
 
     return (
             <View style={styles.content}>
@@ -32,9 +26,6 @@ export default function PlaceInformation(props: PlaceProps) {
                         <Text style={styles.status}>Open until 6PM</Text>
                     </View>
                 </View>
-                <View style={styles.bottomContent}>
-                   
-                </View>
             </View>
     )
 }
@@ -49,12 +40,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         alignItems: "center",
         width: "100%",
+        flex: 1
     },
     topContent: {
-        flex: 1,
+        display: "flex",
         width: "100%",
-        borderColor: "red",
-        borderWidth: 1,
+        borderColor: "green",
+        borderWidth: 2,
         justifyContent: "center",
         alignItems: "center",
         rowGap: 15,
