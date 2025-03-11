@@ -9,13 +9,13 @@
 // Also any .env files need to be untracked or commented out, or else eas build servers will
 // interpret it as the path from the local machine and not the environment variables on EAS itself.
 
-// import * as dotenv from 'dotenv'
-// import path from 'path';
+import * as dotenv from 'dotenv'
+import path from 'path';
 
 
-// dotenv.config({
-//   path: [path.resolve(__dirname, '.env.local')],
-// })
+dotenv.config({
+  path: [path.resolve(__dirname, '.env.local')],
+})
 
 // console.log("GOOGLE_SERVICES_JSON_PLIST:", process.env.GOOGLE_SERVICES_JSON_PLIST);
 // console.log("GOOGLE_SERVICES_JSON:", process.env.GOOGLE_SERVICES_JSON);
