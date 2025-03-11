@@ -33,14 +33,15 @@ export default function PlaceDetails(props: PlaceProps) {
 const styles = StyleSheet.create({
     content: {
         borderColor: "blue",
-        borderWidth: 1,
+        borderWidth: 2,
         display: "flex",
         height: "100%",
         flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
         width: "100%",
-        flex: 1
+        flex: 1,
+        padding: 10
     },
     topContent: {
         display: "flex",

@@ -34,10 +34,9 @@ export default function ActionBar() {
                 </Text>
             </View>
             <View style={actionClasses}>
-                <IconButton />
-                <IconButton />
-                <IconButton />
-                <IconButton />
+                <IconButton color="white" size={35} activeIcon='heart-o' inactiveIcon='heart' hitSlop={10} />
+                <IconButton color="white" size={35} activeIcon='image' inactiveIcon='image' />
+                <IconButton color="white" size={35} activeIcon='info-circle' inactiveIcon='heart' />
             </View>
 
         </View>
@@ -50,20 +49,23 @@ const styles = StyleSheet.create({
         flex: 1, 
         width: "100%",
         borderColor: "yellow", 
-        borderWidth: 1,
+        borderWidth: 0,
         flexDirection: "row",
-        paddingBottom: 50
+        padding: 10,
+        paddingBottom: 60
     },
     actions: {
         borderColor: "red",
-        borderWidth: 2,
+        borderWidth: 0,
         marginLeft: "auto",
         display: "flex",
-        justifyContent: "space-evenly"
+        justifyContent: "flex-end",
+        alignItems: "center",
+        rowGap: 15,
     },
     info: {
         borderColor: "red",
-        borderWidth: 1,
+        borderWidth: 0,
         flex: 1
     }
 })

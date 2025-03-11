@@ -52,11 +52,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: 'rgba(0,0,0,1)',
-    borderColor: "red",
-    borderWidth: 10,
     position: "relative",
     height: "100%",
     width: "100%",
+    
   },
   image: {
     position: "absolute",

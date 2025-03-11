@@ -21,7 +21,7 @@ export default function NavigationBar(props: NavigationBarProps) {
 
 
     return (
-        <View style={[styles.navContainer, { width: "auto" }]}>
+        <View style={[styles.navContainer]}>
             <Pressable onPress={() => navigateTo("Home")}>
                 <Icon style={[styles.icon, handleStyle("Home")]} name='home' size={20} color={"white"} />
             </Pressable>
@@ -37,17 +37,17 @@ export default function NavigationBar(props: NavigationBarProps) {
 
 const styles = StyleSheet.create({
     navContainer: {
+        height: 50,
         alignSelf: "center",
         backgroundColor: "#d90429",
         paddingVertical: 15,
-        paddingHorizontal: 15,
-        borderRadius: 50,
         display: "flex",
         position: "absolute",
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center",
-        bottom: 20,
+        width: "100%",
+        bottom: 0
     },
     icon: {
         paddingHorizontal: 10,
