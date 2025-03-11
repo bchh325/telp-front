@@ -7,6 +7,7 @@ dotenv.config({
 })
 
 console.log("GOOGLE_SERVICES_JSON_PLIST:", process.env.GOOGLE_SERVICES_JSON_PLIST);
+console.log("GOOGLE_SERVICES_JSON:", process.env.GOOGLE_SERVICES_JSON);
 export default {
   "expo": {
     "name": "telp-front",
