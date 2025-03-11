@@ -16,6 +16,7 @@ export default {
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
