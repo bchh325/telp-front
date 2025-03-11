@@ -2,7 +2,7 @@ import React from 'react';
 import { Dimensions, ImageBackground, StatusBar, StyleSheet, View } from "react-native";
 import { store } from "./store/store";
 
-import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -34,14 +34,16 @@ export default function Index() {
   }
 
   return (
-    <SafeAreaProvider>
-      {loggedIn ? null : background()}
-      <Provider store={store}>
-        {
-          loggedIn ? <AppNavigator /> : <AuthNavigator />
-        }
-      </Provider>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        {loggedIn ? null : background()}
+        <Provider store={store}>
+          {
+            loggedIn ? <AppNavigator /> : <AuthNavigator />
+          }
+        </Provider>
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }
 
