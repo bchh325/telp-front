@@ -1,5 +1,14 @@
 
 // UNCOMMENT WHEN CREATING IOS BUILD
+// Build notes:
+// It seems that for building locally (IOS), eas uses git tracked files. 
+// Therefore, things like .env files need to be removed from .gitignore, 
+// which should not be a problem as long as the .env points to a directory that contains
+// the keys and does not contain the keys itself.
+// For Android, on EAS build servers, files should be uploaded as .json, not pasted in. 
+// Also any .env files need to be untracked or commented out, or else eas build servers will
+// interpret it as the path from the local machine and not the environment variables on EAS itself.
+
 // import * as dotenv from 'dotenv'
 // import path from 'path';
 
