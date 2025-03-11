@@ -12,13 +12,13 @@ import AuthNavigator from "./navigation/AuthNavigator";
 import { AuthStackParamList, MainStackParamList } from "./navigation/configs/types";
 
 export default function Index() {
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(true)
   const windowHeight = Dimensions.get("window").height
 
-  store.subscribe(() => {
-    const loggedInState = store.getState().authentication.value
-    setLoggedIn(loggedInState)
-  })
+  // store.subscribe(() => {
+  //   const loggedInState = store.getState().authentication.value
+  //   setLoggedIn(loggedInState)
+  // })
 
 
   const screenHeight = {

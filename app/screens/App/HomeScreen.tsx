@@ -2,14 +2,20 @@ import PlaceInformation from '@/app/components/PlaceInformation';
 import SearchBar from '@/app/components/SearchBar';
 import { businesses_2 } from '@/constants/SampleData';
 import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, ImageStyle, StyleSheet, TextStyle, View, ViewStyle } from 'react-native';
 import PagerView from 'react-native-pager-view';
-
+import classNames from '@/app/utils/classnames';
 
 
 export default function HomeScreen() {
   const sampleData = businesses_2
 
+  const classes = classNames([
+    true && styles.other,
+    true && styles.test
+  ])
+
+  console.debug(classes)
   return (
     <>
       <SearchBar />
@@ -20,7 +26,7 @@ export default function HomeScreen() {
         {
           sampleData.businesses.map((value, index: number) => {
             return (
-              <View style={styles.container}>
+              <View style={classes}>
                 <Image style={styles.image} source={{ uri: value.image_url }} />
                 <PlaceInformation
                   key={index}
@@ -30,7 +36,6 @@ export default function HomeScreen() {
                 />
 
               </View>
-
             )
           })
         }
@@ -56,5 +61,12 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     opacity: 0.3
-},
+  },
+  other: {
+    backgroundColor: "black"
+  },
+  test: {
+    borderColor: "red",
+    borderWidth: 5
+  }
 })
