@@ -1,5 +1,7 @@
 import { ImageStyle, TextStyle, ViewStyle } from "react-native";
 
-export default function classNames(styles: (boolean | ViewStyle | ImageStyle | TextStyle)[] ):  (ViewStyle | ImageStyle | TextStyle)[]{
-    return styles.filter((isStyle) => isStyle) as (ViewStyle | ImageStyle | TextStyle)[]
+type Styles = ViewStyle | TextStyle | ImageStyle
+
+export default function classNames<T extends Styles>(styles: (boolean | T)[]): T[] {
+    return styles.filter((isStyle): isStyle is T => Boolean(isStyle)) 
 }
