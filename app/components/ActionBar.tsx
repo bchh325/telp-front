@@ -34,9 +34,9 @@ export default function ActionBar() {
                 </Text>
             </View>
             <View style={actionClasses}>
-                <IconButton color="white" size={35} activeIcon='heart-o' inactiveIcon='heart' hitSlop={10} />
-                <IconButton color="white" size={35} activeIcon='image' inactiveIcon='image' />
-                <IconButton color="white" size={35} activeIcon='info-circle' inactiveIcon='heart' />
+                <IconButton activeColor="white"  size={35} activeIcon='heart-o' inactiveIcon='heart' inactiveColor='#FF0F0F' hitSlop={10} />
+                <IconButton activeColor="white" size={35} activeIcon='image' inactiveIcon='image' />
+                <IconButton activeColor="white" size={35} activeIcon='info-circle' inactiveIcon='heart' />
             </View>
 
         </View>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "center",
-        rowGap: 15,
+        rowGap: 20,
     },
     info: {
         borderColor: "red",
