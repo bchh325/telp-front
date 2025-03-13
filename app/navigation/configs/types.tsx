@@ -14,3 +14,8 @@ export type AuthStackParamList = {
     Login: undefined,
     Registration: undefined
 }
+
+export type ActionBarParamList = {
+    Feed: undefined
+    Pictures: undefined
+}

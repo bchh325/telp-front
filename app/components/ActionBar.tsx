@@ -3,7 +3,11 @@ import React from 'react'
 import classNames from '../utils/classnames'
 import IconButton from './IconButton'
 
-export default function ActionBar() {
+interface ActionBarProps {
+    navigator?: any
+}
+
+export default function ActionBar({ navigator }: ActionBarProps) {
 
     const containerClasses = classNames([
         true && styles.container
@@ -16,6 +20,10 @@ export default function ActionBar() {
     const infoClasses = classNames([
         true && styles.info
     ])
+
+    const handleNavigation = () => {
+        navigator.navigate("Pictures")
+    }
 
     return (
         <View style={containerClasses}>
@@ -34,8 +42,8 @@ export default function ActionBar() {
                 </Text>
             </View>
             <View style={actionClasses}>
-                <IconButton activeColor="white"  size={35} activeIcon='heart-o' inactiveIcon='heart' inactiveColor='#FF0F0F' hitSlop={10} />
-                <IconButton activeColor="white" size={35} activeIcon='image' inactiveIcon='image' />
+                <IconButton activeColor="white" size={35} activeIcon='heart-o' inactiveIcon='heart' inactiveColor='#FF0F0F' hitSlop={10} />
+                <IconButton onPress={handleNavigation} activeColor="white" size={35} activeIcon='image' inactiveIcon='image' />
                 <IconButton activeColor="white" size={35} activeIcon='info-circle' inactiveIcon='heart' />
             </View>
 
@@ -46,9 +54,9 @@ export default function ActionBar() {
 const styles = StyleSheet.create({
     container: {
         display: "flex",
-        flex: 1, 
+        flex: 1,
         width: "100%",
-        borderColor: "yellow", 
+        borderColor: "yellow",
         borderWidth: 0,
         flexDirection: "row",
         padding: 10,

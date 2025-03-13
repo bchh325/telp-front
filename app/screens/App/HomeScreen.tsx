@@ -6,43 +6,35 @@ import { Button, Image, ImageStyle, StyleSheet, Text, TextStyle, View, ViewStyle
 import PagerView from 'react-native-pager-view';
 import classNames from '@/app/utils/classnames';
 import ActionBar from '@/app/components/ActionBar';
+import { NativeStackNavigationOptions, createNativeStackNavigator } from '@react-navigation/native-stack';
+import { ActionBarParamList } from '@/app/navigation/configs/types';
+import PicturesScreen from '../Dev/PicturesScreen';
+import TestScreen from '../Dev/TestScreen';
 
 
 export default function HomeScreen() {
+  const ActionBarStack = createNativeStackNavigator<ActionBarParamList>()
+
+  const screenOptions: NativeStackNavigationOptions = {
+    headerShown: false,
+    animation: "default",
+  }
+
+
   const [toggleColor, setToggleColor] = useState(false)
   const sampleData = businesses_2
 
   const classes = classNames([
     true && styles.container,
-    toggleColor && styles.test
   ])
 
   console.debug(classes)
   return (
-    <>
-      <SearchBar />
-      <PagerView
-        orientation={"vertical"}
-        initialPage={0}
-        style={{ flex: 1 }}>
-        {
-          sampleData.businesses.map((value, index: number) => {
-            return (
-              <View style={classes}>
-                <Image style={styles.image} source={{ uri: value.image_url }} />
-                <PlaceDetails
-                  key={index}
-                  placeName={value.name}
-                  placeRating={value.rating}
-                  reviewCount={value.review_count}
-                />
-                <ActionBar />
-              </View>
-            )
-          })
-        }
-      </PagerView>
-    </>
+    <ActionBarStack.Navigator screenOptions={screenOptions} initialRouteName="Feed">
+      <ActionBarStack.Screen name="Pictures" component={PicturesScreen} />
+      <ActionBarStack.Screen name="Feed" component={TestScreen} />
+    </ActionBarStack.Navigator>
+
   )
 }
 
@@ -55,7 +47,7 @@ const styles = StyleSheet.create({
     position: "relative",
     height: "100%",
     width: "100%",
-    
+
   },
   image: {
     position: "absolute",

@@ -8,6 +8,7 @@ type Props = {
 export default function Picture({ item }: Props) {
     // console.debug(item.toString())
     // console.debug("string item ")
+    console.log("Picture URL:", item)
     return (
         <View style={styles.container}>
             <Image source={{uri: item.toString()}} style={styles.image} />

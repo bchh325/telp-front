@@ -10,28 +10,24 @@ import { MainStackParamList } from "./configs/types";
 
 
 export default function AppNavigator() {
-    const MainNavigationStack = createNativeStackNavigator<MainStackParamList>()
+    const AppNavigationStack = createNativeStackNavigator<MainStackParamList>()
 
     const screenOptions: NativeStackNavigationOptions = {
         headerShown: false,
         animation: "default",
-        contentStyle: {
-          backgroundColor: "transparent"
-        },
-        presentation: "modal"
       }
 
     const navigationObject = useNavigation();
     return (
         <>
-            <MainNavigationStack.Navigator
+            <AppNavigationStack.Navigator
                 screenOptions={screenOptions}
                 initialRouteName="Home"
             >
-                <MainNavigationStack.Screen name="Home" component={HomeScreen} />
-                <MainNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
-                <MainNavigationStack.Screen name="Favorites" component={Favorites} />
-            </MainNavigationStack.Navigator>
+                <AppNavigationStack.Screen name="Home" component={HomeScreen} />
+                <AppNavigationStack.Screen name="UserAccount" component={UserAccountScreen} />
+                <AppNavigationStack.Screen name="Favorites" component={Favorites} />
+            </AppNavigationStack.Navigator>
             <NavigationBar navigation={navigationObject} />
         </>
     )
