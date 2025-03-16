@@ -1,26 +1,21 @@
 import { NativeStackNavigationOptions, createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
-import PicturesScreen from '../screens/Dev/PicturesScreen'
+import PicturesScreen from '../screens/Home/PicturesScreen'
 import { ActionBarParamList } from './configs/types'
-import TestScreen from '../screens/Dev/TestScreen'
+import FeedScreen from '../screens/Home/FeedScreen'
 
-export default function PictureNavigator() {
+export default function HomeNavigator() {
   const ActionBarStack = createNativeStackNavigator<ActionBarParamList>()
 
   const screenOptions: NativeStackNavigationOptions = {
-      headerShown: false,
-      animation: "default",
-      contentStyle: {
-          backgroundColor: "transparent"
-      },
-      presentation: "modal"
+    headerShown: false,
+    animation: "default",
   }
 
   return (
-
       <ActionBarStack.Navigator screenOptions={screenOptions} initialRouteName="Feed">
           <ActionBarStack.Screen name="Pictures" component={PicturesScreen} />
-          <ActionBarStack.Screen name="Feed" component={TestScreen} />
+          <ActionBarStack.Screen name="Feed" component={FeedScreen} />
       </ActionBarStack.Navigator>
 
   )

@@ -1,25 +1,25 @@
 import React from 'react';
-import { Dimensions, ImageBackground, StatusBar, StyleSheet, View } from "react-native";
+import { Dimensions, ImageBackground, StyleSheet, View } from "react-native";
 import { store } from "./store/store";
 
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Provider } from "react-redux";
 import AppNavigator from "./navigation/AppNavigator";
 import AuthNavigator from "./navigation/AuthNavigator";
-import { AuthStackParamList, MainStackParamList } from "./navigation/configs/types";
+import tAuth from './services/telpAuth';
+import { onAuthStateChanged } from '@react-native-firebase/auth';
 
 export default function Index() {
-  const [loggedIn, setLoggedIn] = useState(true)
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState(null)
   const windowHeight = Dimensions.get("window").height
 
-  // store.subscribe(() => {
-  //   const loggedInState = store.getState().authentication.value
-  //   setLoggedIn(loggedInState)
-  // })
-
+  store.subscribe(() => {
+    const loggedInState = store.getState().authentication.value
+    setLoggedIn(loggedInState)
+  })
 
   const screenHeight = {
     height: windowHeight

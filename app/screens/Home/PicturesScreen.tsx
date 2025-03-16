@@ -5,6 +5,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import PicturesHeader from '../../components/PicturesHeader'
 import { useGetPaginatedPicturesQuery, useLazyGetPaginatedRefreshQuery } from '../../store/slices/springApiSlice'
 import { PaginationQueryParams, PaginationResponse } from '../../types/interfaces'
+import { FlashList } from "@shopify/flash-list";
+
 
 export default function PicturesScreen() {
   const [isRefresh, setIsRefresh] = useState(false)
@@ -89,6 +91,7 @@ export default function PicturesScreen() {
               refreshing={isRefresh}
               onRefresh={handleRefresh} />
           } />}
+          
       </View>
     </SafeAreaView>
   )

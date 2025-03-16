@@ -22,6 +22,7 @@ export default function LoginScreen() {
 
   useEffect(() => {
     if (data) {
+      console.log(data)
       dispatch(setUserSignedIn())
     }
   }, [data])
@@ -40,10 +41,6 @@ export default function LoginScreen() {
 
   const handleNavigation = () => {
     navigation.navigate("Registration")
-  }
-
-  const manualDispatch = () => {
-    dispatch(setUserSignedIn())
   }
 
   const screenHeight = {

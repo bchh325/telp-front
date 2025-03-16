@@ -37,11 +37,11 @@ const tAuth = {
     },
 
     getCurrentUser: () => {
-        try {
-            return getAuth().currentUser
-        } catch (err) {
-            console.debug(err)
-        }
+        return getAuth().currentUser
+    },
+
+    getAuth: () => {
+        return getAuth()
     }
 }
 

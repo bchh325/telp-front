@@ -8,8 +8,9 @@ import classNames from '@/app/utils/classnames';
 import ActionBar from '@/app/components/ActionBar';
 import { NativeStackNavigationOptions, createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ActionBarParamList } from '@/app/navigation/configs/types';
-import PicturesScreen from '../Dev/PicturesScreen';
-import TestScreen from '../Dev/TestScreen';
+import PicturesScreen from '../Home/PicturesScreen';
+import FeedScreen from '../Home/FeedScreen';
+import HomeNavigator from '@/app/navigation/HomeNavigator';
 
 
 export default function HomeScreen() {
@@ -30,11 +31,7 @@ export default function HomeScreen() {
 
   console.debug(classes)
   return (
-    <ActionBarStack.Navigator screenOptions={screenOptions} initialRouteName="Feed">
-      <ActionBarStack.Screen name="Pictures" component={PicturesScreen} />
-      <ActionBarStack.Screen name="Feed" component={TestScreen} />
-    </ActionBarStack.Navigator>
-
+    <HomeNavigator />
   )
 }
 
